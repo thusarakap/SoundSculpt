@@ -1,0 +1,16 @@
+{
+  "name": "soundsculpt",
+  "version": "1.0.0",
+  "description": "PC software to calibrate speakers by utilising a smartphone.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "icon": "resources/images/SoundSulptIcon.png",
+  "keywords": [],
+  "author": "CS31",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.1.4"
+  }
+}

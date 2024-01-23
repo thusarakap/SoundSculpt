@@ -60,6 +60,53 @@ body {
     margin-left: 10px; /* Add some space between text and arrow */
   }
 
+  /*Start*/
+  .startDescriptionContainer {
+    position: relative;
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+    background-color: #683E78;
+    color: #fff;
+    border-radius: 0 0 50px 50px;
+  }
+
+  .startDescriptionContainer h1{
+    margin-left: 45px;
+    font-size: 60px;
+  }
+
+  .startDescriptionContainer p{
+    margin-left: 45px;
+    margin-top: -18px;
+    font-size: 24px;
+  }
+
+  .loginRegButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35%;
+  }
+
+  .loginRegButtonContainer label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #6e6e6e;
+  }
+
+  .loginRegButtonContainer a {
+    width: 200px;
+    text-align: center;
+    padding: 6px 40px;
+    background: linear-gradient(to left, #9866AB, #6366AE);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
   /*Login*/  
   .login-container {
     background-color: #fff;
