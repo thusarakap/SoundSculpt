@@ -90,7 +90,7 @@ body {
     height: 35%;
   }
 
-  .loginRegButtonContainer label{
+  .loginRegButtonContainer p{
     margin-top: 10px;
     margin-bottom: 10px;
     color: #6e6e6e;
@@ -108,46 +108,139 @@ body {
   }
 
   /*Login*/  
-  .login-container {
+  body.loginPage {
+    font-family: Poppins, sans-serif;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    text-align: left;
+    display: flex;
+    flex-direction: row; /* Set flex direction to row */
+    align-items: left; /* Align items to the start (left) of the container */
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #9866AB, #6366AE);
   }
-  
-  .login-container h2 {
-    margin-bottom: 20px;
+
+  .loginContainer {
+    position: relative;
+    width: 40%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #fff;
+    color: #6365aeb4;
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    flex-direction: column; 
+    padding-left: 30px;
   }
-  
-  .login-form {
+
+  .loginContainer h2{
+    color: #6365ae;
+    font-size: 30px;
+  }
+
+  .loginForm {
     display: flex;
     flex-direction: column;
+    margin-left: 30px;
   }
   
-  .login-form label {
-    margin-bottom: 5px;
+  .loginForm label {
     font-weight: bold;
+    font-size: 14px;
   }
   
-  .login-form input {
+  .loginForm input {
     padding: 8px;
     margin-bottom: 15px;
+    background-color: #eee;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%;
+    width: 300px;
     box-sizing: border-box;
   }
+
+  .loginForm a {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #6F6D6D;
+  }
+
+  .loginForm p{
+    margin-left: 131px;
+    color: #6e6e6e;
+    margin-bottom: 8px
+  }
+
+  .loginForm .socialAuthText {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 34px;
+    margin-bottom: 15px;
+  }
   
-  .login-form button {
-    padding: 10px;
-    background-color: #4caf50;
-    color: #fff;
+  /* Style for the lines on either side */
+  .loginForm .socialAuthText::before,
+  .loginForm .socialAuthText::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ccc; /* Adjust the line color as needed */
+    max-width: 45px;
+    margin: 0 8px;
+  }
+  
+  /* Optional: Adjust the styling of the text */
+  .loginForm .socialAuthText span {
+    font-size: 14px; /* Adjust the font size as needed */
+    color: #555; /* Adjust the text color as needed */
+  }
+
+  .socialAuth {
+    display: flex;
+    width: 250px;
+    margin-left: 56px;
+    margin-bottom: 30px;
+  }
+
+  .socialAuth .socialButton {
+    padding: 0;
+    background: none;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    width: 100%;
+    margin-right: 20px;
+  }
+  
+  /* Style for the circular shape */
+  .socialAuth .socialButton img {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    border-radius: 50%;
+    padding: 8px; /* Adjust the padding as needed */
+    background-color: #eee; /* Background color for the circular area */
+    transition: background-color 0.3s ease; /* Add a transition effect */
+  }
+  
+  /* Change the background color on hover */
+  .socialAuth .socialButton:hover img {
+    background-color: #ddd; /* Adjust the hover background color as needed */
+  }
+  
+  .loginForm .submitButton {
+    margin-left: 20px;
+    background: linear-gradient(to right, #9866AB, #6366AE);
+    color: #fff;
+    font-family: Poppins;
+    text-decoration: none;
+    border: none;
+    padding: 6px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 250px;
+  }
+
+  .loginForm .sendToRegistration {
+    margin-left: 32px;
   }
   

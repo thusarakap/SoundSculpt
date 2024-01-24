@@ -5,21 +5,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../resources/styles/styles.css">
 </head>
-<body>
-  <div class="login-container">
+<body class="loginPage">
+  <div class="loginContainer">
     <h2>Sign In</h2>
-    <form class="login-form">
+    <form class="loginForm">
       <label for="username">Name</label>
       <input type="text" id="username" name="username" required>
 
       <label for="password">Password</label>
       <input type="password" id="password" name="password" required>
+      <a href="register.html">Forgot your password ?</a>
 
-      <button type="submit">Sign In</button>
+      <p>OR</p>
+
+      <p class="socialAuthText">Sign in using</p>
+
+      <div class="socialAuth">
+        
+        
+        <button type="button" class="socialButton" id="googleLogin">
+          <img src="../resources/images/googleSocialLogin.svg" alt="Google" />
+        </button>
+
+        <button type="button" class="socialButton" id="facebookLogin">
+          <img src="../resources/images/facebookSocialLogin.svg" alt="Facebook" />
+        </button>
+
+        <button type="button" class="socialButton" id="appleLogin">
+          <img src="../resources/images/appleSocialLogin.svg" alt="Apple" />
+        </button>
+
+      </div>
+
+      
+
+
+      <button type="submit" class="submitButton">Sign In</button>
       <br>
-      <label>Dont have an account? <a href="register.html">Sign Up</a></label>
+      <label class="sendToRegistration">Dont have an account? <a href="register.html">Sign Up</a></label>
     </form>
   </div>
 </body>

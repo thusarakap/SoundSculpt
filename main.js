@@ -15,7 +15,7 @@ function createWindow() {
   });
 
   // Load the start screen
-  mainWindow.loadFile('pages\index.html');
+  mainWindow.loadFile('pages/index.html');
 
   mainWindow.on('closed', function () {
     mainWindow = null;
