@@ -8,14 +8,14 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 700,
-    icon: path.join(__dirname, 'resources/images/SoundSulptIcon.png'),
+    icon: path.join(__dirname, 'resources/images/SoundSculptIcon.png'),
     webPreferences: {
       nodeIntegration: true,
     },
   });
 
   // Load the start screen
-  mainWindow.loadFile('index.html');
+  mainWindow.loadFile('pages\index.html');
 
   mainWindow.on('closed', function () {
     mainWindow = null;
