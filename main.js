@@ -17,6 +17,9 @@ function createWindow() {
   // Load the start screen
   mainWindow.loadFile('pages/index.html');
 
+  // Dev tools
+  mainWindow.webContents.openDevTools();
+
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
