@@ -16,231 +16,231 @@ body {
     margin: 0;
   }
 
-  /*Splash*/
-  .splashImgContainer {
-    position: relative;
-    width: 100%;
-    height: 75%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #EEE;
-    text-align: center;
-    border-radius: 0 0 50px 50px;
-  }
+/*Splash*/
+.splashImgContainer {
+  position: relative;
+  width: 100%;
+  height: 75%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EEE;
+  text-align: center;
+  border-radius: 0 0 50px 50px;
+}
 
-  .splashImgContainer img {
-    width: 100%;
-    height: 50%;
-    object-fit: contain;
-    
-  }
-
-  .continueContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: -1rem;
-    height: 25%;
-  }
-
-  .continueContainer a {
-    padding: 10px 40px;
-    background: linear-gradient(to right, #9866AB, #6366AE);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  .continueContainer img {
-    vertical-align: middle; /* Adjust the vertical alignment as needed */
-    margin-left: 10px; /* Add some space between text and arrow */
-  }
-
-  /*Start*/
-  .startDescriptionContainer {
-    position: relative;
-    width: 100%;
-    height: 65%;
-    overflow: hidden;
-    background-color: #683E78;
-    color: #fff;
-    border-radius: 0 0 50px 50px;
-  }
-
-  .startDescriptionContainer h1{
-    margin-left: 45px;
-    font-size: 60px;
-  }
-
-  .startDescriptionContainer p{
-    margin-left: 45px;
-    margin-top: -18px;
-    font-size: 24px;
-  }
-
-  .loginRegButtonContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 35%;
-  }
-
-  .loginRegButtonContainer p{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #6e6e6e;
-  }
-
-  .loginRegButtonContainer a {
-    width: 200px;
-    text-align: center;
-    padding: 6px 40px;
-    background: linear-gradient(to left, #9866AB, #6366AE);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  /*Login*/  
-  body.loginPage {
-    font-family: Poppins, sans-serif;
-    background-color: #fff;
-    display: flex;
-    flex-direction: row; /* Set flex direction to row */
-    align-items: left; /* Align items to the start (left) of the container */
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(to right, #9866AB, #6366AE);
-  }
-
-  .loginContainer {
-    position: relative;
-    width: 40%;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #fff;
-    color: #6365aeb4;
-    border-radius: 0 30px 30px 0;
-    display: flex;
-    flex-direction: column; 
-    padding-left: 30px;
-  }
-
-  .loginContainer h2{
-    color: #6365ae;
-    font-size: 30px;
-  }
-
-  .loginForm {
-    display: flex;
-    flex-direction: column;
-    margin-left: 30px;
-  }
+.splashImgContainer img {
+  width: 100%;
+  height: 50%;
+  object-fit: contain;
   
-  .loginForm label {
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  .loginForm input {
-    padding: 8px;
-    margin-bottom: 15px;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 300px;
-    box-sizing: border-box;
-  }
+}
 
-  .loginForm a {
-    margin-top: -10px;
-    margin-bottom: 10px;
-    font-size: 13px;
-    text-decoration: none;
-    color: #6F6D6D;
-  }
+.continueContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1rem;
+  height: 25%;
+}
 
-  .loginForm p{
-    margin-left: 131px;
-    color: #6e6e6e;
-    margin-bottom: 8px
-  }
+.continueContainer a {
+  padding: 10px 40px;
+  background: linear-gradient(to right, #9866AB, #6366AE);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 
-  .loginForm .socialAuthText {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-left: 34px;
-    margin-bottom: 15px;
-  }
-  
-  /* Style for the lines on either side */
-  .loginForm .socialAuthText::before,
-  .loginForm .socialAuthText::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: #ccc; /* Adjust the line color as needed */
-    max-width: 45px;
-    margin: 0 8px;
-  }
-  
-  /* Optional: Adjust the styling of the text */
-  .loginForm .socialAuthText span {
-    font-size: 14px; /* Adjust the font size as needed */
-    color: #555; /* Adjust the text color as needed */
-  }
+.continueContainer img {
+  vertical-align: middle; /* Adjust the vertical alignment as needed */
+  margin-left: 10px; /* Add some space between text and arrow */
+}
 
-  .socialAuth {
-    display: flex;
-    width: 250px;
-    margin-left: 56px;
-    margin-bottom: 30px;
-  }
+/*Start*/
+.startDescriptionContainer {
+  position: relative;
+  width: 100%;
+  height: 65%;
+  overflow: hidden;
+  background-color: #683E78;
+  color: #fff;
+  border-radius: 0 0 50px 50px;
+}
 
-  .socialAuth .socialButton {
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-right: 20px;
-  }
-  
-  /* Style for the circular shape */
-  .socialAuth .socialButton img {
-    width: 30px; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
-    border-radius: 50%;
-    padding: 8px; /* Adjust the padding as needed */
-    background-color: #eee; /* Background color for the circular area */
-    transition: background-color 0.3s ease; /* Add a transition effect */
-  }
-  
-  /* Change the background color on hover */
-  .socialAuth .socialButton:hover img {
-    background-color: #ddd; /* Adjust the hover background color as needed */
-  }
-  
-  .loginForm .submitButton {
-    margin-left: 20px;
-    background: linear-gradient(to right, #9866AB, #6366AE);
-    color: #fff;
-    font-family: Poppins;
-    text-decoration: none;
-    border: none;
-    padding: 6px 40px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 250px;
-  }
+.startDescriptionContainer h1{
+  margin-left: 45px;
+  font-size: 60px;
+}
 
-  .loginForm .sendToRegistration {
-    margin-left: 32px;
-  }
-  
+.startDescriptionContainer p{
+  margin-left: 45px;
+  margin-top: -18px;
+  font-size: 24px;
+}
+
+.loginRegButtonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 35%;
+}
+
+.loginRegButtonContainer p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #6e6e6e;
+}
+
+.loginRegButtonContainer a {
+  width: 200px;
+  text-align: center;
+  padding: 6px 40px;
+  background: linear-gradient(to left, #9866AB, #6366AE);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Styles common to login and registration pages */
+body.loginRegPages {
+  font-family: Poppins, sans-serif;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row; /* Set flex direction to row */
+  align-items: left; /* Align items to the start (left) of the container */
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(to right, #9866AB, #6366AE);
+}
+
+/*Login*/ 
+.loginContainer {
+  position: relative;
+  width: 40%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+  color: #6365aeb4;
+  border-radius: 0 30px 30px 0;
+  display: flex;
+  flex-direction: column; 
+  padding-left: 30px;
+}
+
+.loginContainer h2{
+  color: #6365ae;
+  font-size: 30px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.loginForm label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.loginForm input {
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.loginForm a {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #6F6D6D;
+}
+
+.loginForm p{
+  margin-left: 131px;
+  color: #6e6e6e;
+  margin-bottom: 8px
+}
+
+.loginForm .socialAuthText {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 34px;
+  margin-bottom: 15px;
+}
+
+/* Style for the lines on either side */
+.loginForm .socialAuthText::before,
+.loginForm .socialAuthText::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: #ccc; /* Adjust the line color as needed */
+  max-width: 45px;
+  margin: 0 8px;
+}
+
+/* Optional: Adjust the styling of the text */
+.loginForm .socialAuthText span {
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #555; /* Adjust the text color as needed */
+}
+
+.socialAuth {
+  display: flex;
+  width: 250px;
+  margin-left: 56px;
+  margin-bottom: 30px;
+}
+
+.socialAuth .socialButton {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Style for the circular shape */
+.socialAuth .socialButton img {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  border-radius: 50%;
+  padding: 8px; /* Adjust the padding as needed */
+  background-color: #eee; /* Background color for the circular area */
+  transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+/* Change the background color on hover */
+.socialAuth .socialButton:hover img {
+  background-color: #ddd; /* Adjust the hover background color as needed */
+}
+
+.loginForm .submitButton {
+  margin-left: 20px;
+  background: linear-gradient(to right, #9866AB, #6366AE);
+  color: #fff;
+  font-family: Poppins;
+  text-decoration: none;
+  border: none;
+  padding: 6px 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 250px;
+}
+
+.loginForm .sendToRegistration {
+  margin-left: 32px;
+}
