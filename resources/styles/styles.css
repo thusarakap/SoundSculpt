@@ -138,18 +138,18 @@ body.loginRegPages {
   font-size: 30px;
 }
 
-.loginForm {
+.loginRegForm {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
 }
 
-.loginForm label {
+.loginRegForm label {
   font-weight: bold;
   font-size: 14px;
 }
 
-.loginForm input {
+.loginRegForm input {
   padding: 8px;
   margin-bottom: 15px;
   background-color: #eee;
@@ -159,7 +159,7 @@ body.loginRegPages {
   box-sizing: border-box;
 }
 
-.loginForm a {
+.loginRegForm a {
   margin-top: -10px;
   margin-bottom: 10px;
   font-size: 13px;
@@ -167,13 +167,13 @@ body.loginRegPages {
   color: #6F6D6D;
 }
 
-.loginForm p{
+.loginRegForm p{
   margin-left: 131px;
   color: #6e6e6e;
   margin-bottom: 8px
 }
 
-.loginForm .socialAuthText {
+.loginRegForm .socialAuthText {
   position: relative;
   display: flex;
   align-items: center;
@@ -182,8 +182,8 @@ body.loginRegPages {
 }
 
 /* Style for the lines on either side */
-.loginForm .socialAuthText::before,
-.loginForm .socialAuthText::after {
+.loginRegForm .socialAuthText::before,
+.loginRegForm .socialAuthText::after {
   content: '';
   flex: 1;
   height: 1px;
@@ -193,7 +193,7 @@ body.loginRegPages {
 }
 
 /* Optional: Adjust the styling of the text */
-.loginForm .socialAuthText span {
+.loginRegForm .socialAuthText span {
   font-size: 14px; /* Adjust the font size as needed */
   color: #555; /* Adjust the text color as needed */
 }
@@ -228,7 +228,7 @@ body.loginRegPages {
   background-color: #ddd; /* Adjust the hover background color as needed */
 }
 
-.loginForm .submitButton {
+.loginRegForm .submitButton {
   margin-left: 20px;
   background: linear-gradient(to right, #9866AB, #6366AE);
   color: #fff;
@@ -241,6 +241,54 @@ body.loginRegPages {
   width: 250px;
 }
 
-.loginForm .sendToRegistration {
+.loginRegForm .sendToRegistration {
   margin-left: 32px;
+}
+
+/* Registration */
+.registrationContainer {
+  position: relative;
+  width: 55%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+  color: #6365aeb4;
+  border-radius: 0 30px 30px 0;
+  display: flex;
+  flex-direction: column; 
+  padding-left: 30px;
+}
+
+.usernameEmailFormContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.loginRegForm .formGroup input {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginRegForm .formGroup input {
+  margin-right: 15px;
+  max-width: 225px;
+}
+
+.registrationContainer p {
+  margin-left: 200px;
+}
+
+.registrationContainer .socialAuth {
+  margin-left: 125px;
+}
+
+.registrationContainer .socialAuthText {
+  margin-left: 100px;
+}
+
+.registrationContainer .submitButton {
+  margin-left: 85px;
+
+}.registrationContainer .sendToRegistration {
+  margin-left: 95px;
 }
