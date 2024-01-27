@@ -297,6 +297,7 @@ body.loginRegPages {
 body.mainPagesBody {
   display: flex;
   flex-direction: row;
+  
   .navbar {
     background-color: #493E6A;
     color: #fff;
@@ -342,6 +343,10 @@ body.mainPagesBody {
     border-radius: 5px;
     transition: 0.3s ease;
   }
+
+  #settingsIcon {
+    margin-top: 450px;
+  }  
 }
 
 /* Home page */
@@ -349,6 +354,30 @@ body.mainPagesBody {
   padding: 20px;
 } 
 
-#settingsIcon {
-  margin-top: 450px;
+.parent-input {
+  --input-height: 0.5rem;
+  --input-color: blue;
+  position: relative;
+  display: flex;
+}
+
+input[type="range"] {
+  appearance: none;
+  height: var(--input-height);
+  border-radius: var(--input-height);
+  accent-color: var(--input-color);
+  width:90vw;
+}
+
+.parent-input::before {
+  content: "";
+  width: var(--before-width, 0);
+  height: var(--input-height, 0);
+  border-radius: var(--input-height);
+  pointer-events: none;
+  position: absolute;
+  background-color: var(--input-color);
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--before-left, 0);
 }
