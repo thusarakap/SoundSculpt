@@ -354,30 +354,180 @@ body.mainPagesBody {
   padding: 20px;
 } 
 
-.parent-input {
-  --input-height: 0.5rem;
-  --input-color: blue;
+/* Equaliser */
+.component {
   position: relative;
+  color: white;
+  background-color: #9184B9;
+  border-radius: 25px;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5), 0px -2px 40px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+  min-height: 360px;
   display: flex;
+  flex-direction: column;
 }
 
-input[type="range"] {
-  appearance: none;
-  height: var(--input-height);
-  border-radius: var(--input-height);
-  accent-color: var(--input-color);
-  width:90vw;
+.component main {
+  position: relative;
+  display: block;
 }
 
-.parent-input::before {
-  content: "";
-  width: var(--before-width, 0);
-  height: var(--input-height, 0);
-  border-radius: var(--input-height);
+.component main .sliders {
+  position: relative;
+  display: inline-block;
+}
+
+.component main .sliders .range-slider {
+  margin-top: 20px;
+  display: inline-block;
+  width: 40px;
+  position: relative;
+  height: 300px;
+  float: left;
+}
+@media (min-width: 800px) {
+  .component main .sliders .range-slider {
+    width: 80px;
+  }
+}
+.component main .sliders .range-slider::after {
+  position: absolute;
+  bottom: -24px;
+  left: calc(50% - 2em);
+  font-size: 80%;
+  color: #ffffff;
+  content: "32";
+  width: 4em;
+  text-align: center;
+}
+.component main .sliders .range-slider:nth-child(2)::after {
+  content: "32";
+}
+.component main .sliders .range-slider:nth-child(3)::after {
+  content: "64";
+}
+.component main .sliders .range-slider:nth-child(4)::after {
+  content: "128";
+}
+.component main .sliders .range-slider:nth-child(5)::after {
+  content: "256";
+}
+.component main .sliders .range-slider:nth-child(6)::after {
+  content: "512";
+}
+.component main .sliders .range-slider:nth-child(7)::after {
+  content: "1K";
+}
+.component main .sliders .range-slider:nth-child(8)::after {
+  content: "2K";
+}
+.component main .sliders .range-slider__thumb {
+  opacity: 1;
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background-color: white;
+  color: #8376FF;
+  text-align: center;
+  font-size: 40%;
+  box-shadow: 0 0 2px #373641;
+  border-radius: 50%;
+  pointer-events: none;
+  cursor: pointer;
+  z-index: 2;
+}
+@media (min-width: 800px) {
+  .component main .sliders .range-slider__thumb {
+    left: 30px;
+  }
+}
+
+/* Fill colour for silders */
+.component main .sliders .range-slider__bar {
+  display: none;
+}
+@media (min-width: 800px) {
+  .component main .sliders .range-slider__bar {
+    left: 38px;
+  }
+}
+.component main .sliders .range-slider input[type=range][orient=vertical] {
+  position: relative;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
+}
+.component main .sliders .range-slider input[type=range][orient=vertical]::-webkit-slider-runnable-track, .component main .sliders .range-slider input[type=range][orient=vertical]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+.component main .sliders .range-slider input[type=range][orient=vertical]::-webkit-slider-runnable-track {
+  border: none;
+  background: #343440;
+  width: 4px;
+  border-color: #343440;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px #3D3D4A;
+}
+.component main .sliders .range-slider input[type=range][orient=vertical]::-moz-range-track {
+  border: none;
+  background: #343440;
+  width: 4px;
+  border-color: #343440;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px #3D3D4A;
+}
+.component main .sliders .range-slider input[type=range][orient=vertical]::-ms-track {
+  border: none;
+  background: #343440;
+  width: 4px;
+  border-color: #343440;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px #3D3D4A;
+  color: transparent;
+  height: 100%;
+}
+.component main .sliders .range-slider input[type=range][orient=vertical]::-ms-fill-lower, .component main .sliders .range-slider input[type=range][orient=vertical]::-ms-fill-upper, .component main .sliders .range-slider input[type=range][orient=vertical]::-ms-tooltip {
+  display: none;
+}
+.component main .sliders .range-slider input[type=range][orient=vertical]::-webkit-slider-thumb {
+  left: -20px;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+.component main .sliders .range-slider input[type=range][orient=vertical]::-moz-range-thumb {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+.component main .sliders .range-slider input[type=range][orient=vertical]::-ms-thumb {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  opacity: 0;
+}
+
+.component main .sliders svg {
+  z-index: 1;
+  overflow: visible;
   pointer-events: none;
   position: absolute;
-  background-color: var(--input-color);
-  top: 50%;
-  transform: translateY(-50%);
-  left: var(--before-left, 0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.component main .sliders svg .line {
+  stroke: #5650B9;
 }
