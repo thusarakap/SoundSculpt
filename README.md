@@ -6,3 +6,6 @@ forward icons PNG Designed By EncoderXSolutions from https://pngtree.com/freepng
 
 Social login:
 https://auth0.com/
+
+REFERENCES:
+https://codepen.io/kunukn/pen/obJEJE
