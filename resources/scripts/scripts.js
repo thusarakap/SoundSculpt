@@ -200,3 +200,17 @@ let app = (() => {
   inputs.forEach(input => input.addEventListener('change', element => app.updateSlider(input)));
   app.selectPreset('custom');
 })();
+
+
+// Get slider output
+let inputs = document.querySelectorAll("input[type=range]");
+
+inputs.forEach((range) => {
+  range.addEventListener("input", () => {
+    app.updateSlider(range);
+
+    // For debugging purposes, clear the console and print the current value
+    console.clear();
+    console.log(range.value);
+  });
+});
