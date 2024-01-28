@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Poppins';
-    src: url('resources\fonts\Poppins-Regular.ttf') format('truetype');
+    src: url('../fonts/Poppins-Regular.ttf') format('truetype');
   }
 
 
@@ -365,6 +365,7 @@ body.mainPagesBody {
   min-height: 360px;
   display: flex;
   flex-direction: column;
+  margin-left: 20px;
 }
 
 .component main {
@@ -463,9 +464,7 @@ body.mainPagesBody {
   writing-mode: bt-lr;
   -webkit-appearance: slider-vertical;
 }
-.component main .sliders .range-slider input[type=range][orient=vertical]::-webkit-slider-runnable-track, .component main .sliders .range-slider input[type=range][orient=vertical]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
+
 .component main .sliders .range-slider input[type=range][orient=vertical]::-webkit-slider-runnable-track {
   border: none;
   background: #343440;
@@ -474,27 +473,8 @@ body.mainPagesBody {
   border-radius: 10px;
   box-shadow: 0 0 0 2px #3D3D4A;
 }
-.component main .sliders .range-slider input[type=range][orient=vertical]::-moz-range-track {
-  border: none;
-  background: #343440;
-  width: 4px;
-  border-color: #343440;
-  border-radius: 10px;
-  box-shadow: 0 0 0 2px #3D3D4A;
-}
-.component main .sliders .range-slider input[type=range][orient=vertical]::-ms-track {
-  border: none;
-  background: #343440;
-  width: 4px;
-  border-color: #343440;
-  border-radius: 10px;
-  box-shadow: 0 0 0 2px #3D3D4A;
-  color: transparent;
-  height: 100%;
-}
-.component main .sliders .range-slider input[type=range][orient=vertical]::-ms-fill-lower, .component main .sliders .range-slider input[type=range][orient=vertical]::-ms-fill-upper, .component main .sliders .range-slider input[type=range][orient=vertical]::-ms-tooltip {
-  display: none;
-}
+
+
 .component main .sliders .range-slider input[type=range][orient=vertical]::-webkit-slider-thumb {
   left: -20px;
   position: relative;
@@ -502,20 +482,10 @@ body.mainPagesBody {
   height: 40px;
   opacity: 0;
 }
-.component main .sliders .range-slider input[type=range][orient=vertical]::-moz-range-thumb {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  opacity: 0;
-}
-.component main .sliders .range-slider input[type=range][orient=vertical]::-ms-thumb {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  opacity: 0;
-}
+
 
 .component main .sliders svg {
+  margin-top: 10px;
   z-index: 1;
   overflow: visible;
   pointer-events: none;
