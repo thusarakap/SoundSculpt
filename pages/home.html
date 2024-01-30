@@ -17,60 +17,122 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->    
-        <div class="component"> 
-          <main>       
-            <div class="sliders">
-              <svg preserveAspectRatio="none" viewBox="0 0 140 100">
-                <path d="" class="line-shadow"></path>
-                <path d="" class="line"></path>        
-              </svg>
-        
-              <div class="range-slider">
-                <input type="range" orient="vertical" min="0" max="100" />
-                <div class="range-slider__bar"></div>
-                <div class="range-slider__thumb"></div>
+    <div class="homePageContainer">
+    <h1>Home</h1>
+
+    <!-- Main Content -->   
+    <div class="mainContent">
+          <div class="component"> 
+              <div class="sliders">
+                <svg preserveAspectRatio="none" viewBox="0 0 140 100">
+                  <path d="" class="line-shadow"></path>
+                  <path d="" class="line"></path>        
+                </svg>
+          
+                <div class="range-slider">
+                  <input type="range" orient="vertical" min="0" max="100" />
+                  <div class="range-slider__bar"></div>
+                  <div class="range-slider__thumb"></div>
+                </div>
+          
+                <div class="range-slider">
+                  <input type="range" orient="vertical" min="0" max="100" />
+                  <div class="range-slider__bar"></div>
+                  <div class="range-slider__thumb"></div>
+                </div>
+          
+                <div class="range-slider">
+                  <input type="range" orient="vertical" min="0" max="100" />
+                  <div class="range-slider__bar"></div>
+                  <div class="range-slider__thumb"></div>
+                </div>
+          
+                <div class="range-slider">
+                  <input type="range" orient="vertical" min="0" max="100" />
+                  <div class="range-slider__bar"></div>
+                  <div class="range-slider__thumb"></div>
+                </div>
+          
+                <div class="range-slider">
+                  <input type="range" orient="vertical" min="0" max="100" />
+                  <div class="range-slider__bar"></div>
+                  <div class="range-slider__thumb"></div>
+                </div>
+          
+                <div class="range-slider">
+                  <input type="range" orient="vertical" min="0" max="100" />
+                  <div class="range-slider__bar"></div>
+                  <div class="range-slider__thumb"></div>
+                </div>
+          
+                <div class="range-slider">
+                  <input type="range" orient="vertical" min="0" max="100" />
+                  <div class="range-slider__bar"></div>
+                  <div class="range-slider__thumb"></div>
+                </div>
               </div>
-        
-              <div class="range-slider">
-                <input type="range" orient="vertical" min="0" max="100" />
-                <div class="range-slider__bar"></div>
-                <div class="range-slider__thumb"></div>
+              <div class="halfwayLine"></div>
+          </div>
+
+          <div class="optionBoxContainer">
+            <div class="presetBox">
+              <div class="selectedPresetContainer">
+                <img class="optionIcon" src="..\resources\images\speakerIcon.svg" alt="Music note" style="width: 20px; height: 20px;">
+                <p id="selectedPreset">Devices</p>
+                <img id="arrowIcon" src="..\resources\images\downwardArrow.svg" alt="Arrow" style="width: 20px; height: 20px;">
               </div>
-        
-              <div class="range-slider">
-                <input type="range" orient="vertical" min="0" max="100" />
-                <div class="range-slider__bar"></div>
-                <div class="range-slider__thumb"></div>
-              </div>
-        
-              <div class="range-slider">
-                <input type="range" orient="vertical" min="0" max="100" />
-                <div class="range-slider__bar"></div>
-                <div class="range-slider__thumb"></div>
-              </div>
-        
-              <div class="range-slider">
-                <input type="range" orient="vertical" min="0" max="100" />
-                <div class="range-slider__bar"></div>
-                <div class="range-slider__thumb"></div>
-              </div>
-        
-              <div class="range-slider">
-                <input type="range" orient="vertical" min="0" max="100" />
-                <div class="range-slider__bar"></div>
-                <div class="range-slider__thumb"></div>
-              </div>
-        
-              <div class="range-slider">
-                <input type="range" orient="vertical" min="0" max="100" />
-                <div class="range-slider__bar"></div>
-                <div class="range-slider__thumb"></div>
-              </div>
-        
+              
+              <select id="optionSelect" size="5" onchange="app.selectPreset(this)">
+                <option value="custom">Speakers (Realtek(R) Audio)</option>
+                <option value="rock">NVIDIA High Definition Audio</option>
+                <option value="pop">Headphones (Realtek(R)Audio)</option>
+                <option value="classical">Treble Boost</option>
+                <option value="disco">Game</option>
+                <!-- Add more options as needed -->
+              </select>
             </div>
-          </main>    
+
+            <div class="presetBox">
+              <div class="selectedPresetContainer">
+                <img class="optionIcon" src="..\resources\images\musicNoteIcon.svg" alt="Music note" style="width: 20px; height: 20px;">
+                <p id="selectedPreset">Presets</p>
+                <img id="arrowIcon" src="..\resources\images\downwardArrow.svg" alt="Arrow" style="width: 20px; height: 20px;">
+              </div>
+              
+              <select id="optionSelect" size="5" onchange="app.selectPreset(this)">
+                <option value="calibrated">Calibrated</option>
+                <option value="flat">Flat</option>
+                <option value="bass">Bass Boost</option>
+                <option value="trebel">Treble Boost</option>
+                <option value="game">Game</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+          </div>
+      </div>
+
+      <!-- Volume slider -->
+      <div class="volumeConnectContainer">
+        <div class="volumeSlider">
+          <img src="..\resources\images\volume.svg" alt="Wifi" style="width: 35px; height: 35px;"/>
+          <input type="range" value="50" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+          <output>50</output>
         </div>
+
+        <button>
+          Connect
+          <img src="..\resources\images\connectIcon.svg" alt="Wifi" style="width: 35px; height: 35px;"/>
+        </button>
+
+      </div>
+
+
+
+    </div>
+
+     
+
+       
     <script src="../resources/scripts/scripts.js"></script>
 </body>
 </html>
