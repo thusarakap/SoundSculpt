@@ -18,13 +18,13 @@ function negateDBValues(dBValues, speakerType) {
     return negatedValues;
 }
 
-// Example usage
+// Test
 let inputDBValues = [-10, -10, -3, 7, 0, -9, -15];
 let speakerType = "laptop";
 
 let outputDBValues = negateDBValues(inputDBValues, speakerType);
 
-// Accessing the variables
+// Print
 for (let key in outputDBValues) {
     console.log(`${key}: ${outputDBValues[key]}`);
 }
