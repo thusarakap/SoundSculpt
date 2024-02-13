@@ -43,8 +43,6 @@ let outputDBValues3 = negateDBValues(inputDBValues3, speakerType3);
 console.log("test3");
 printResults(outputDBValues3);
 
-
-
 // Print
 function printResults(output){
     for (let key in output) {
