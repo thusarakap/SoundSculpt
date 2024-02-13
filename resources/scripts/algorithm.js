@@ -18,13 +18,36 @@ function negateDBValues(dBValues, speakerType) {
     return negatedValues;
 }
 
-// Test
-let inputDBValues = [-10, -10, -3, 7, 0, -9, -15];
-let speakerType = "laptop";
+// Test1
+let inputDBValues1 = [-10, -10, -3, 7, 0, -9, -15];
+let speakerType1 = "laptop";
 
-let outputDBValues = negateDBValues(inputDBValues, speakerType);
+let outputDBValues1 = negateDBValues(inputDBValues1, speakerType1);
+console.log("test1:");
+printResults(outputDBValues1);
+
+//Test2
+
+let inputDBValues2 = [-5, 2, -7, 12, 0, -6, -11];
+let speakerType2 = "bookshelf";
+
+let outputDBValues2 = negateDBValues(inputDBValues2, speakerType2);
+console.log("test2:");
+printResults(outputDBValues2);
+
+//Test3
+let inputDBValues3 = [0, -6, 8, 2, -1, 5, -4];
+let speakerType3 = "laptop";
+
+let outputDBValues3 = negateDBValues(inputDBValues3, speakerType3);
+console.log("test3");
+printResults(outputDBValues3);
+
+
 
 // Print
-for (let key in outputDBValues) {
-    console.log(`${key}: ${outputDBValues[key]}`);
+function printResults(output){
+    for (let key in output) {
+        console.log(`${key}: ${output[key]}`);
+    }
 }
