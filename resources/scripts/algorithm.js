@@ -20,7 +20,7 @@ function negateDBValues(dBValues, speakerType) {
             }
         }else if (speakerType === "soundbars"){
             if(i === 4 || i === 5 || i === 6){
-                negatedValue = Math.min();
+                negatedValue = Math.min(negatedValue, 6); // cap frequency 5,6 and 7 at 6dB
             }
         }
         negatedValues[`frequency${i + 1}`] = negatedValue;
