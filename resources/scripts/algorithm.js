@@ -25,6 +25,8 @@ function negateDBValues(dBValues, speakerType) {
         }else if(speakerType === "Outdoor speakers"){
             if(i === 5){
                 negatedValue = Math.min(negatedValue, 6); // cap frequency 6 at 6dB
+            }else if(i === 6){
+                negatedValue = Math.min(negatedValue, 7); //cap frequency 7 at 7dB
             }
         }
         negatedValues[`frequency${i + 1}`] = negatedValue;
