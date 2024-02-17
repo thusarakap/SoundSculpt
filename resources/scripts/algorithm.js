@@ -52,12 +52,21 @@ console.log("test2:");
 printResults(outputDBValues2);
 
 //Test3
-let inputDBValues3 = [0, -6, 8, 2, -1, 5, -4];
-let speakerType3 = "laptop";
+let inputDBValues3 = [-4, -5, 8, 3, -7, 6, 5 ]
+let speakerType3 = "portable speaker";
 
 let outputDBValues3 = negateDBValues(inputDBValues3, speakerType3);
-console.log("test3");
+console.log("test3:");
 printResults(outputDBValues3);
+
+//Test4
+let inputDBValues4 = [-5, -6, 0, 5, 6, -5, -4];
+let speakerType4 = "soundabars";
+
+let outputDBValues4 = negateDBValues(inputDBValues4, speakerType4);
+console.log("");
+
+
 
 // Print
 function printResults(output){
