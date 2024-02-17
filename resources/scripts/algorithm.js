@@ -61,12 +61,19 @@ printResults(outputDBValues3);
 
 //Test4
 let inputDBValues4 = [-5, -6, 0, 5, 6, -5, -4];
-let speakerType4 = "soundabars";
+let speakerType4 = "soundbars";
 
 let outputDBValues4 = negateDBValues(inputDBValues4, speakerType4);
-console.log("");
+console.log("test4:");
+printResults(outputDBValues4);
 
+//Test5
+let inputDBValues5 = [-3, 4, 6, -4, 6, -5, 4];
+let speakerType5 = "outdoor speakers";
 
+let outputDBValues5 = negateDBValues(inputDBValues5, speakerType5);
+console.log("test5:");
+printResults(outputDBValues5);
 
 // Print
 function printResults(output){
