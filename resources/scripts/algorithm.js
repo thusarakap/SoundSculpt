@@ -81,6 +81,13 @@ let outputDBValues5 = negateDBValues(inputDBValues5, speakerType5);
 console.log("test5:");
 printResults(outputDBValues5);
 
+//Test6
+let inputDBValues6 = [-5, -5, 0, 7, -10, -7, 6];
+let speakerType6 = "Gaming speakers";
+
+let outputDBValues6 = negateDBValues(inputDBValues6, speakerType6);
+console.log("test6:");
+printResults(outputDBValues6);
 // Print
 function printResults(output){
     for (let key in output) {
