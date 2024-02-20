@@ -32,7 +32,11 @@ function negateDBValues(dBValues, speakerType) {
             if(i=== 4){
                 negatedValue = Math.min(negatedValue, 7); // cap frequency 5 at 7dB
             }else if(i === 5){
-                negatedValue = Math.min(negatedValue, 8);
+                negatedValue = Math.min(negatedValue, 8); // cap frequency 6 at 8dB
+            }
+        }else if (speakerType = "Bluetooth Speakers"){
+            if(i === 0 | i === 1){
+                negatedValue = Math.min(negatedValue, 5); // cap frequency 1 and 2 at 5dB
             }
         }
         negatedValues[`frequency${i + 1}`] = negatedValue;
