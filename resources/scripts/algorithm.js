@@ -44,6 +44,24 @@ function negateDBValues(dBValues, speakerType) {
     return negatedValues;
 }
 
+function adjustPresets(speakerType,calibrationValues){
+    let prestes = {
+        "laptop":[-10, -10, -3, 7, 0, -9, -15],
+        "bookshlef":[-5, 2, -7, 12, 0, -6, -11],
+        "portable speaker":[-4, -5, 8, 3, -7, 6, 5 ],
+        "soundbars":[-5, -6, 0, 5, 6, -5, -4],
+        "outdoor speakers":[-3, 4, 6, -4, 6, -5, 4],
+        "Gaming speakers":[-5, -5, 0, 7, -10, -7, 6],
+        "Bluetooth Speakers":[-6, -5, 3, 5, 8, 11, 12],
+        
+    };
+    let adjustPresets = presets[speakerType].map((value,index)=> {
+        let adjustedValue = value + calibrationValues[index];
+        return adjustedValue;
+    });
+    return adjustedPresets;
+}
+
 // Test1
 let inputDBValues1 = [-10, -10, -3, 7, 0, -9, -15];
 let speakerType1 = "laptop";
