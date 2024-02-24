@@ -63,7 +63,9 @@ function printResults(output){
 // Preset adjustment function
 
 function adjustAudioPreset(calibratedProfile, currentPreset) {
-    let Bass =[];
+
+    let Bass =[10, 10, 0, 0, 0, 0, -2];
+
     let adjustedPresets = [];
     
     for (let i = 0; i < currentPreset.length; i++) {
@@ -75,7 +77,7 @@ function adjustAudioPreset(calibratedProfile, currentPreset) {
 
 // Test
 let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
-let currentPreset = [10, 10, 0, 0, 0, 0, -2]; // Example current preset (e.g., flat)
+let currentPreset = Bass; // Example current preset (e.g., flat)
 
 let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset);
 
@@ -87,7 +89,6 @@ function applyAdjustedPresets(){
     console.log("Applying adjusted presets:",adjustedPresets);
 }
 
-
 function handleButtonClick(isButtonOn, adjustedPresets){
     if(isButtonOn){
         applyAdjustedPresets(adjustedPresets);
@@ -95,3 +96,6 @@ function handleButtonClick(isButtonOn, adjustedPresets){
         console.log("adjustedPresets:", adjustedPresets);
     }
 }
+
+
+
