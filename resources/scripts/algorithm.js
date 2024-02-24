@@ -53,55 +53,6 @@ let outputDBValues1 = negateDBValues(inputDBValues1, speakerType1);
 console.log("test1:");
 printResults(outputDBValues1);
 
-//Test2
-
-let inputDBValues2 = [-5, 2, -7, 12, 0, -6, -11];
-let speakerType2 = "bookshelf";
-
-let outputDBValues2 = negateDBValues(inputDBValues2, speakerType2);
-console.log("test2:");
-printResults(outputDBValues2);
-
-//Test3
-let inputDBValues3 = [-4, -5, 8, 3, -7, 6, 5 ]
-let speakerType3 = "portable speaker";
-
-let outputDBValues3 = negateDBValues(inputDBValues3, speakerType3);
-console.log("test3:");
-printResults(outputDBValues3);
-
-//Test4
-let inputDBValues4 = [-5, -6, 0, 5, 6, -5, -4];
-let speakerType4 = "soundbars";
-
-let outputDBValues4 = negateDBValues(inputDBValues4, speakerType4);
-console.log("test4:");
-printResults(outputDBValues4);
-
-//Test5
-let inputDBValues5 = [-3, 4, 6, -4, 6, -5, 4];
-let speakerType5 = "outdoor speakers";
-
-let outputDBValues5 = negateDBValues(inputDBValues5, speakerType5);
-console.log("test5:");
-printResults(outputDBValues5);
-
-//Test6
-let inputDBValues6 = [-5, -5, 0, 7, -10, -7, 6];
-let speakerType6 = "Gaming speakers";
-
-let outputDBValues6 = negateDBValues(inputDBValues6, speakerType6);
-console.log("test6:");
-printResults(outputDBValues6);
-
-//Test7
-let inputDBValues7 = [-6, -5, 3, 5, 8, 11, 12];
-let speakerType7 = "Bluetooth Speakers";
-
-let outputDBValues7 = negateDBValues(inputDBValues7, speakerType7);
-console.log("test7:");
-printResults(outputDBValues7);
-
 // Print
 function printResults(output){
     for (let key in output) {
@@ -125,10 +76,21 @@ function adjustAudioPreset(calibratedProfile, currentPreset) {
 let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
 let currentPreset = [10, 10, 0, 0, 0, 0, -2]; // Example current preset (e.g., flat)
 
-let adjustedPreset = adjustAudioPreset(calibratedProfile, currentPreset);
+let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset);
 
 console.log("Adjusted Preset:");
-console.log("Bass:", adjustedPreset); // Example output for the flat preset
+console.log("Bass:", adjustedPresets); // Example output for the flat preset
 
 
+function applyAdjustedPresets(){
+    console.log("Applying adjusted presets:",adjustedPresets);
+}
 
+
+function handleButtonClick(isButtonOn, adjustedPresets){
+    if(isButtonOn){
+        applyAdjustedPresets(adjustedPresets);
+    }else{
+        console.log("adjustedPresets:", adjustedPresets);
+    }
+}
