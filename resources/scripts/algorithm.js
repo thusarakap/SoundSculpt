@@ -109,29 +109,26 @@ function printResults(output){
     }
 }
 
-function adjustPresets(speakerType,calibrationValues){
-    let prestes = {
-        "laptop":[-10, -10, -3, 7, 0, -9, -15],
-        "bookshlef":[-5, 2, -7, 12, 0, -6, -11],
-        "portable speaker":[-4, -5, 8, 3, -7, 6, 5 ],
-        "soundbars":[-5, -6, 0, 5, 6, -5, -4],
-        "outdoor speakers":[-3, 4, 6, -4, 6, -5, 4],
-        "Gaming speakers":[-5, -5, 0, 7, -10, -7, 6],
-        "Bluetooth Speakers":[-6, -5, 3, 5, 8, 11, 12],
-        
-    };
-    let adjustPresets = presets[speakerType].map((value,index)=> {
-        let adjustedValue = value + calibrationValues[index];
-        return adjustedValue;
-    });
+// Preset adjustment function
+
+function adjustAudioPreset(calibratedProfile, currentPreset) {
+    let adjustedPresets = [];
+    
+    for (let i = 0; i < currentPreset.length; i++) {
+        adjustedPresets.push(currentPreset[i] + calibratedProfile[i]);
+    }
+
     return adjustedPresets;
 }
 
-let calibrationValues = [];
-let speakerType = "laptop";
+// Test
+let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
+let currentPreset = [10, 10, 0, 0, 0, 0, -2]; // Example current preset (e.g., flat)
 
-let adjustedPresets =adjustPresets(speakerType,calibrationValues);
-console.log("adjusted presets:");
-printResults(adjustedPresets);
+let adjustedPreset = adjustAudioPreset(calibratedProfile, currentPreset);
+
+console.log("Adjusted Preset:");
+console.log("Bass:", adjustedPreset); // Example output for the flat preset
+
 
 
