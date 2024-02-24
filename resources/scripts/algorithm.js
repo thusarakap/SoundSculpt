@@ -64,8 +64,6 @@ function printResults(output){
 
 function adjustAudioPreset(calibratedProfile, currentPreset) {
 
-    let Bass =[10, 10, 0, 0, 0, 0, -2];
-
     let adjustedPresets = [];
     
     for (let i = 0; i < currentPreset.length; i++) {
@@ -74,15 +72,18 @@ function adjustAudioPreset(calibratedProfile, currentPreset) {
 
     return adjustedPresets;
 }
+let Bass = [10, 10, 0, 0, 0, 0, -2];
+let Flat = [9, 10, 0, 0, 2, 0,-3];
+
 
 // Test
 let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
-let currentPreset = Bass; // Example current preset (e.g., flat)
+let currentPreset = Flat;
 
 let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset);
 
 console.log("Adjusted Preset:");
-console.log("Bass:", adjustedPresets); // Example output for the flat preset
+console.log("Bass", adjustedPresets); // Example output for the flat preset
 
 
 function applyAdjustedPresets(){
