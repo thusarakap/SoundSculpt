@@ -127,4 +127,11 @@ function adjustPresets(speakerType,calibrationValues){
     return adjustedPresets;
 }
 
-let calibrationValues
+let calibrationValues = [];
+let speakerType = "laptop";
+
+let adjustedPresets =adjustPresets(speakerType,calibrationValues);
+console.log("adjusted presets:");
+printResults(adjustedPresets);
+
+
