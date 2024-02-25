@@ -74,6 +74,7 @@ function adjustAudioPreset(calibratedProfile, currentPreset) {
 }
 let Bass = [10, 10, 0, 0, 0, 0, -2];
 let Flat = [9, 10, 0, 0, 2, 0,-3];
+let Treble = [6, -4, 7, 0, 0, 12, 3];
 
 
 // Test
@@ -83,10 +84,12 @@ let currentPreset = Flat;
 let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset);
 
 console.log("Adjusted Preset:");
-console.log("Bass", adjustedPresets); // Example output for the flat preset
+console.log("Flat", adjustedPresets); // Example output for the flat preset
 
 
 function applyAdjustedPresets(){
+
+    
     console.log("Applying adjusted presets:",adjustedPresets);
 }
 
