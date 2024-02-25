@@ -96,8 +96,6 @@ function applyAdjustedPresets(){
 function handleButtonClick(isButtonOn, adjustedPresets){
     if(isButtonOn){
         applyAdjustedPresets(adjustedPresets);
-    }else{
-        console.log("adjustedPresets:", adjustedPresets);
     }
 }
 
