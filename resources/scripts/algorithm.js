@@ -90,7 +90,6 @@ let Treble = [6, -4, 7, 0, 0, 12, 3];
 
 let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
 let currentPreset = Flat;
-let buttonState = false;
 
 let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset, true);
 console.log("Adjusted Preset:");
