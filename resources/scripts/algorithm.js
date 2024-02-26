@@ -62,16 +62,32 @@ function printResults(output){
 
 // Preset adjustment function
 
-function adjustAudioPreset(calibratedProfile, currentPreset) {
 
-    let adjustedPresets = [];
+function adjustAudioPreset(calibratedProfile, currentPreset, isButtonOn) {
+    if(isButtonOn){
+
+        let adjustedPresets = [];
     
-    for (let i = 0; i < currentPreset.length; i++) {
-        adjustedPresets.push(currentPreset[i] + calibratedProfile[i]);
-    }
+        for (let i = 0; i < currentPreset.length; i++) {
+            adjustedPresets.push(currentPreset[i] + calibratedProfile[i]);
+        }
 
-    return adjustedPresets;
+        return adjustedPresets;
+    }else{
+        return null;
+    }
 }
+
+if (typeof window !== "undefined"){
+    function getButtonState(){
+        const button document.getElementById("myButton");
+        return button.classList.contains("active");
+    }
+}
+
+
+
+
 let Bass = [10, 10, 0, 0, 0, 0, -2];
 let Flat = [9, 10, 0, 0, 2, 0,-3];
 let Treble = [6, -4, 7, 0, 0, 12, 3];
@@ -80,6 +96,7 @@ let Treble = [6, -4, 7, 0, 0, 12, 3];
 // Test
 let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
 let currentPreset = Flat;
+let buttonState = false;
 
 let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset);
 
@@ -87,15 +104,9 @@ console.log("Adjusted Preset:");
 console.log("Flat", adjustedPresets); // Example output for the flat preset
 
 
-function applyAdjustedPresets(){
-
-    
-    console.log("Applying adjusted presets:",adjustedPresets);
-}
-
 function handleButtonClick(isButtonOn, adjustedPresets){
     if(isButtonOn){
-        applyAdjustedPresets(adjustedPresets);
+        adjustAudioPreset(adjustedPresets);
     }
 }
 
