@@ -95,8 +95,6 @@ let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset, true);
 console.log("Adjusted Preset:");
 console.log("Flat", adjustedPresets); // Example output for the flat preset
 
-let noAdjustment = adjustAudioPreset(calibratedProfile,currentPreset,false);
-console.log(noAdjustment);
 
 
 
