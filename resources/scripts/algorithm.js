@@ -68,20 +68,13 @@ function adjustAudioPreset(calibratedProfile, currentPreset, isButtonOn) {
 
         let adjustedPresets = [];
     
-        for (let i = 0; i < currentPreset.length; i++) {
-            adjustedPresets.push(currentPreset[i] + calibratedProfile[i]);
+        if (calibratedProfile.length !== currentPreset.length) {
+            throw new Error ("calibrated profile and current preset must have same length");
         }
 
-        return adjustedPresets;
+        return currentPreset.map((value,index) => value + calibratedProfile[index]);
     }else{
         return null;
-    }
-}
-
-if (typeof window !== "undefined"){
-    function getButtonState(){
-        const button document.getElementById("myButton");
-        return button.classList.contains("active");
     }
 }
 
@@ -94,21 +87,17 @@ let Treble = [6, -4, 7, 0, 0, 12, 3];
 
 
 // Test
+
 let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
 let currentPreset = Flat;
 let buttonState = false;
 
-let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset);
-
+let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset, true);
 console.log("Adjusted Preset:");
 console.log("Flat", adjustedPresets); // Example output for the flat preset
 
-
-function handleButtonClick(isButtonOn, adjustedPresets){
-    if(isButtonOn){
-        adjustAudioPreset(adjustedPresets);
-    }
-}
+let noAdjustment = adjustAudioPreset(calibratedProfile,currentPreset,false);
+console.log(noAdjustment);
 
 
 
