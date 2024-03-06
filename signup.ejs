@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .error-message {
+            color: red;
+            margin-top: 5px;
+            text-align: left; /* Center the error message */
+        }
+    </style>
+</head>
+<body class="loginRegPages">
+    <div class="registrationContainer">
+        <h2>Sign Up</h2>
+        <% if (signupErrors && signupErrors.length > 0) { %>
+            <div class="error-message"> <!-- Corrected class name to match the CSS -->
+                <% signupErrors.forEach(error => { %>
+                    <p><%= error %></p>
+                <% }) %>
+            </div>
+        <% } %>
+        <form class="loginRegForm" method="post" action="/signup">
+            <div class="usernameEmailFormContainer">
+                <div class="formGroup">
+                    <label for="username">Name</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="formGroup">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="formGroup">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="formGroup">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <p class="orText1">OR</p>
+            <p class="socialAuthText">Sign in using</p>
+            <div class="socialAuth">
+                <button type="button" class="socialButton" id="googleLogin"></button>
+                <button type="button" class="socialButton" id="facebookLogin"></button>
+                <button type="button" class="socialButton" id="appleLogin"></button>
+            </div>
+            <button type="submit" class="submitButton">Sign Up</button>
+            <p class="sentence1">Already have an account? <a href="/">Signin</a></p>
+        </form>
+    </div>
+</body>
+</html>
