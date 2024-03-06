@@ -44,10 +44,16 @@ function negateDBValues(dBValues, speakerType) {
     return negatedValues;
 }
 
+const fs = require('fs');
+const path = require('path');
+
+const filePath = path.join(__dirname,'..','data','data.json');
+const rawData = fs.readFileSync(filePath);
+const data = JSON.parse(rawData);
 
 // Test1
-let inputDBValues1 = [-10, -10, -3, 7, 0, -9, -15];
-let speakerType1 = "laptop";
+let inputDBValues1 = data.dBValues1;
+let speakerType1 = data.speakerType1;
 
 let outputDBValues1 = negateDBValues(inputDBValues1, speakerType1);
 console.log("test1:");
