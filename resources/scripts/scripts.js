@@ -63,8 +63,8 @@ previousNode.connect(audioContext.destination);
 // Add 'input' event listeners to the gain controls
 gainControls.forEach((control, i) => {
     control.addEventListener('input', function() {
-        // Map the range of 0 to 100 to the range of -40 to 40
-        const gainValue = (this.value / 100) * 80 - 40;
+        // Map the range of 0 to 100 to the range of -12 to 12
+        const gainValue = (values[index] / 100) * 24 - 12;
         filters[i].gain.value = gainValue;
     });
 });
