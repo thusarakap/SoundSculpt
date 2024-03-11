@@ -52,12 +52,12 @@ const rawData = fs.readFileSync(filePath);
 const data = JSON.parse(rawData);
 
 // Test1
-let inputDBValues = data.dBValues;
-let speakerType = data.speakerType;
+let inputDBValues1 = data.dBValues;
+let speakerType1 = data.speakerType;
 
-let outputDBValues = negateDBValues(inputDBValues, speakerType);
+let outputDBValues1 = negateDBValues(inputDBValues1, speakerType1);
 console.log("test1:");
-printResults(outputDBValues);
+printResults(outputDBValues1);
 
 // Print
 function printResults(output){
