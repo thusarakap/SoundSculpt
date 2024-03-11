@@ -52,24 +52,48 @@ filters.forEach((filter, i) => {
     filter.frequency.value = frequencies[i];
 });
 
-// Connect the filters in series (source -> filters -> destination)
+// Create a GainNode for the volume control
+const volumeGainNode = audioContext.createGain();
+
+// Get the volume slider element
+const volumeSlider = document.querySelector('#volume');
+
+// Add an 'input' event listener to the slider
+volumeSlider.addEventListener('input', function() {
+    // Get the value of the slider
+    const value = this.value;
+
+    // Convert the value to a volume level (range 0 to 1)
+    const volume = value / 100;
+
+    // Set the gain value of the GainNode
+    volumeGainNode.gain.value = volume;
+});
+
+// Connect the filters in series (source -> filters -> volumeGainNode -> destination)
 let previousNode = audioSource;
 filters.forEach((filter) => {
     previousNode.connect(filter);
     previousNode = filter;
 });
-previousNode.connect(audioContext.destination);
+previousNode.connect(volumeGainNode);
+
+// Connect the volumeGainNode to the AudioContext
+volumeGainNode.connect(audioContext.destination);
 
 // Add 'input' event listeners to the gain controls
 gainControls.forEach((control, i) => {
-    control.addEventListener('input', function() {
-        // Map the range of 0 to 100 to the range of -12 to 12
-        const gainValue = (values[index] / 100) * 24 - 12;
-        filters[i].gain.value = gainValue;
-    });
+  control.addEventListener('input', function() {
+      // Get the value of the control
+      const value = this.value;
+
+      // Map the range of 0 to 100 to the range of -12 to 12
+      const gainValue = (value / 100) * 30 - 15;
+
+      // Set the gain value of the filter
+      filters[i].gain.value = gainValue;
+  });
 });
-
-
 
 
 // String formatter
