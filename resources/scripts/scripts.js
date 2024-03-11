@@ -297,7 +297,7 @@ let app = (() => {
     // Update the gain value of each filter
     filters.forEach((filter, index) => {
         // Map the range of 0 to 100 to the range of -40 to 40
-        const gainValue = (values[index] / 100) * 80 - 40;
+        const gainValue = (values[index] / 100) * 30 - 15;
         filter.gain.value = gainValue;
     });
 }
