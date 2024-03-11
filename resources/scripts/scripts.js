@@ -250,26 +250,33 @@ let app = (() => {
   function selectPreset(selectElement) {
     // Get the selected preset
     const type = selectElement.value;
-  
+
     // Define preset values
     const presets = {
-      calibrated: [70, 50, 40, 60, 50, 40, 50],
-      flat: [50, 50, 50, 50, 50, 50, 60],
-      bass: [100, 90, 70, 60, 50, 50, 50],
-      trebel: [40, 50, 50, 60, 70, 80, 90],
-      game: [80, 70, 60, 40, 60, 70, 80]
+        calibrated: [70, 50, 40, 60, 50, 40, 50],
+        flat: [50, 50, 50, 50, 50, 50, 60],
+        bass: [100, 90, 70, 60, 50, 50, 50],
+        trebel: [40, 50, 50, 60, 70, 80, 90],
+        game: [80, 70, 60, 40, 60, 70, 80]
     };
-  
+
     // Get the values for the selected preset
     const values = presets[type];
-  
+
     // Set the input values to the preset values
     const inputs = app.inputs;
     inputs.forEach((input, index) => {
-      input.value = values[index];
-      app.updateSlider(input);
+        input.value = values[index];
+        app.updateSlider(input);
     });
-  }
+
+    // Update the gain value of each filter
+    filters.forEach((filter, index) => {
+        // Map the range of 0 to 100 to the range of -40 to 40
+        const gainValue = (values[index] / 100) * 80 - 40;
+        filter.gain.value = gainValue;
+    });
+}
 
   return {
     inputs: [].slice.call(document.querySelectorAll('.sliders input')),
