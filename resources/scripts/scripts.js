@@ -1,3 +1,25 @@
+// Select the file input and audio player elements
+const fileInput = document.getElementById('audioFileInput');
+const audioPlayer = document.getElementById('audioPlayer');
+
+// Add an 'change' event listener to the file input element
+fileInput.addEventListener('change', function(event) {
+    // Check if a file was selected
+    if (event.target.files.length > 0) {
+        console.log(event.target.files[0]); // Log the selected file
+
+        // Create a Blob URL from the selected file
+        const audioURL = URL.createObjectURL(event.target.files[0]);
+        console.log(audioURL); // Log the Blob URL
+
+        // Set the Blob URL as the source of the audio player
+        audioPlayer.src = audioURL;
+
+        // Load the audio player
+        audioPlayer.load();
+    }
+});
+
 // String formatter
 if (!String.prototype.format) {
   String.prototype.format = function() {
