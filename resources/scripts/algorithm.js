@@ -69,7 +69,11 @@ function printResults(output){
 // Preset adjustment function
 
 
-function adjustAudioPreset(calibratedProfile, currentPreset, isButtonOn) {
+function adjustAudioPreset(calibratedProfile, currentPreset,isButtonOn) {
+    if(typeof isButtonOn !== 'boolean'){
+        throw new Error("isButton must be a boolean");
+    }
+
     if(isButtonOn){
 
         let adjustedPresets = [];
@@ -95,9 +99,11 @@ let Treble = [6, -4, 7, 0, 0, 12, 3];
 // Test
 
 let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
-let currentPreset = Treble; //CurrentPreset type
+let currentPreset = Flat;//CurrentPreset type
+let isButton = true;
 
-let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset, true);
+
+let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset,isButton);
 console.log("Adjusted Preset:");
 console.log(currentPreset=== Bass? "Bass":
             currentPreset=== Flat? "Flat":
