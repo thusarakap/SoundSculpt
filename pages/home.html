@@ -29,44 +29,50 @@
                   <path d="" class="line"></path>        
                 </svg>
           
+                <!-- <div class="range-slider">
+                  <input type="range" id="gain60" orient="vertical" min="-40" max="40" value="0" />
+                  <div class="range-slider__bar"></div>
+                  <div class="range-slider__thumb"></div>
+              </div> -->
+
                 <div class="range-slider">
-                  <input type="range" orient="vertical" min="0" max="100" />
+                  <input type="range" id="gain60" orient="vertical" min="0" max="100" value="50"/>
                   <div class="range-slider__bar"></div>
                   <div class="range-slider__thumb"></div>
                 </div>
           
                 <div class="range-slider">
-                  <input type="range" orient="vertical" min="0" max="100" />
+                  <input type="range" id="gain150" orient="vertical" min="0" max="100" />
                   <div class="range-slider__bar"></div>
                   <div class="range-slider__thumb"></div>
                 </div>
           
                 <div class="range-slider">
-                  <input type="range" orient="vertical" min="0" max="100" />
+                  <input type="range" id="gain400" orient="vertical" min="0" max="100" />
                   <div class="range-slider__bar"></div>
                   <div class="range-slider__thumb"></div>
                 </div>
           
                 <div class="range-slider">
-                  <input type="range" orient="vertical" min="0" max="100" />
+                  <input type="range" id="gain1000" orient="vertical" min="0" max="100" />
                   <div class="range-slider__bar"></div>
                   <div class="range-slider__thumb"></div>
                 </div>
           
                 <div class="range-slider">
-                  <input type="range" orient="vertical" min="0" max="100" />
+                  <input type="range" id="gain3000" orient="vertical" min="0" max="100" />
                   <div class="range-slider__bar"></div>
                   <div class="range-slider__thumb"></div>
                 </div>
           
                 <div class="range-slider">
-                  <input type="range" orient="vertical" min="0" max="100" />
+                  <input type="range" id="gain8000" orient="vertical" min="0" max="100" />
                   <div class="range-slider__bar"></div>
                   <div class="range-slider__thumb"></div>
                 </div>
           
                 <div class="range-slider">
-                  <input type="range" orient="vertical" min="0" max="100" />
+                  <input type="range" id="gain16000" orient="vertical" min="0" max="100" />
                   <div class="range-slider__bar"></div>
                   <div class="range-slider__thumb"></div>
                 </div>
@@ -115,24 +121,26 @@
       <div class="volumeConnectContainer">
         <div class="volumeSlider">
           <img src="..\resources\images\volume.svg" alt="Wifi" style="width: 35px; height: 35px;"/>
-          <input type="range" value="50" min="1" max="100" oninput="this.nextElementSibling.value = this.value">
+          <input type="range"  id="volume" value="50" min="0" max="100" oninput="this.nextElementSibling.value = this.value">
           <output>50</output>
         </div>
 
-        <a href="..\pages\connect.html">
+        <label for="audioFileInput">Audio file:</label>
+        <input type="file" id="audioFileInput" accept="audio/*">
+        <audio id="audioPlayer" controls></audio>
+
+        <!-- <a id="open-app-link">
           Connect
           <img src="..\resources\images\connectIcon.svg" alt="Wifi" style="width: 35px; height: 35px;"/>
-        </a>
+        </a> -->
 
-      </div>
+        </div>
 
+        </div>
 
+<script src="../resources/scripts/scripts.js"></script>
 
-    </div>
-
-     
-
-       
-    <script src="../resources/scripts/scripts.js"></script>
 </body>
 </html>
+
+        
