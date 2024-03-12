@@ -640,6 +640,27 @@ body.mainPagesBody {
   cursor: pointer;
 }
 
+/* Style for the label */
+label[for="audioFileInput"] {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+/* Style for the file input */
+#audioFileInput {
+  display: block;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+
+/* Style for the audio player */
+#audioPlayer {
+  width: 100%;
+}
+
 /* Volume Slider */
 .volumeSlider {
   margin: 20px 0 0 20px; 
