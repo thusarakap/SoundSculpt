@@ -1,6 +1,7 @@
 // Select the file input and audio player
 const fileInput = document.getElementById('audioFileInput');
 const audioPlayer = document.getElementById('audioPlayer');
+const audioFileInputLabel = document.querySelector('label[for="audioFileInput"]'); // Select the label
 
 // Add an 'change' event listener to the file input element
 fileInput.addEventListener('change', function(event) {
@@ -14,6 +15,12 @@ fileInput.addEventListener('change', function(event) {
 
         // Load the audio player
         audioPlayer.load();
+
+        // Change the color of the label when a file is selected
+        audioFileInputLabel.style.backgroundColor = '#694079';
+    } else {
+        // Reset the color of the label when no file is selected
+        audioFileInputLabel.style.backgroundColor = '#333';
     }
 });
 
@@ -95,6 +102,12 @@ gainControls.forEach((control, i) => {
   });
 });
 
+let calibratedPresets = false;
+
+document.getElementById('toggleCalibratedPresets').addEventListener('click', function() {
+    calibratedPresets = !calibratedPresets;
+    console.log('Calibrated Presets:', calibratedPresets);
+});
 
 // String formatter
 if (!String.prototype.format) {
