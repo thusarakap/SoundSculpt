@@ -1,3 +1,77 @@
+// Select the file input and audio player
+const fileInput = document.getElementById('audioFileInput');
+const audioPlayer = document.getElementById('audioPlayer');
+
+// Add an 'change' event listener to the file input element
+fileInput.addEventListener('change', function(event) {
+    // Check if a file was selected
+    if (event.target.files.length > 0) {
+        // Create a Blob URL from the selected file
+        const audioURL = URL.createObjectURL(event.target.files[0]);
+
+        // Set the Blob URL as the source of the audio player
+        audioPlayer.src = audioURL;
+
+        // Load the audio player
+        audioPlayer.load();
+    }
+});
+
+// Create an audio context
+const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+// Create an audio source from the audio player
+const audioSource = audioContext.createMediaElementSource(audioPlayer);
+
+// Select the gain controls
+const gainControls = [
+    document.getElementById('gain60'),
+    document.getElementById('gain150'),
+    document.getElementById('gain400'),
+    document.getElementById('gain1000'),
+    document.getElementById('gain3000'),
+    document.getElementById('gain8000'),
+    document.getElementById('gain16000')
+];
+
+// Create seven BiquadFilterNode objects for the seven frequencies
+const filters = [
+    audioContext.createBiquadFilter(),
+    audioContext.createBiquadFilter(),
+    audioContext.createBiquadFilter(),
+    audioContext.createBiquadFilter(),
+    audioContext.createBiquadFilter(),
+    audioContext.createBiquadFilter(),
+    audioContext.createBiquadFilter()
+];
+
+// Set the type and frequency of each filter
+const frequencies = [60, 150, 400, 1000, 3000, 8000, 16000];
+filters.forEach((filter, i) => {
+    filter.type = 'peaking';
+    filter.frequency.value = frequencies[i];
+});
+
+// Connect the filters in series (source -> filters -> destination)
+let previousNode = audioSource;
+filters.forEach((filter) => {
+    previousNode.connect(filter);
+    previousNode = filter;
+});
+previousNode.connect(audioContext.destination);
+
+// Add 'input' event listeners to the gain controls
+gainControls.forEach((control, i) => {
+    control.addEventListener('input', function() {
+        // Map the range of 0 to 100 to the range of -12 to 12
+        const gainValue = (values[index] / 100) * 24 - 12;
+        filters[i].gain.value = gainValue;
+    });
+});
+
+
+
+
 // String formatter
 if (!String.prototype.format) {
   String.prototype.format = function() {
@@ -176,26 +250,33 @@ let app = (() => {
   function selectPreset(selectElement) {
     // Get the selected preset
     const type = selectElement.value;
-  
+
     // Define preset values
     const presets = {
-      calibrated: [70, 50, 40, 60, 50, 40, 50],
-      flat: [50, 50, 50, 50, 50, 50, 60],
-      bass: [100, 90, 70, 60, 50, 50, 50],
-      trebel: [40, 50, 50, 60, 70, 80, 90],
-      game: [80, 70, 60, 40, 60, 70, 80]
+        calibrated: [70, 50, 40, 60, 50, 40, 50],
+        flat: [50, 50, 50, 50, 50, 50, 60],
+        bass: [100, 90, 70, 60, 50, 50, 50],
+        trebel: [40, 50, 50, 60, 70, 80, 90],
+        game: [80, 70, 60, 40, 60, 70, 80]
     };
-  
+
     // Get the values for the selected preset
     const values = presets[type];
-  
+
     // Set the input values to the preset values
     const inputs = app.inputs;
     inputs.forEach((input, index) => {
-      input.value = values[index];
-      app.updateSlider(input);
+        input.value = values[index];
+        app.updateSlider(input);
     });
-  }
+
+    // Update the gain value of each filter
+    filters.forEach((filter, index) => {
+        // Map the range of 0 to 100 to the range of -40 to 40
+        const gainValue = (values[index] / 100) * 80 - 40;
+        filter.gain.value = gainValue;
+    });
+}
 
   return {
     inputs: [].slice.call(document.querySelectorAll('.sliders input')),
