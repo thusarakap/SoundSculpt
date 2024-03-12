@@ -80,24 +80,8 @@
               <div class="halfwayLine"></div>
           </div>
 
+          
           <div class="optionBoxContainer">
-            <div class="presetBox">
-              <div class="selectedPresetContainer">
-                <img class="optionIcon" src="..\resources\images\speakerIcon.svg" alt="Music note" style="width: 20px; height: 20px;">
-                <p id="selectedPreset">Devices</p>
-                <img id="arrowIcon" src="..\resources\images\downwardArrow.svg" alt="Arrow" style="width: 20px; height: 20px;">
-              </div>
-              
-              <select id="optionSelect" size="5" onchange="app.selectPreset(this)">
-                <option value="custom">Speakers (Realtek(R) Audio)</option>
-                <option value="rock">NVIDIA High Definition Audio</option>
-                <option value="pop">Headphones (Realtek(R)Audio)</option>
-                <option value="classical">Treble Boost</option>
-                <option value="disco">Game</option>
-                <!-- Add more options as needed -->
-              </select>
-            </div>
-
             <div class="presetBox">
               <div class="selectedPresetContainer">
                 <img class="optionIcon" src="..\resources\images\musicNoteIcon.svg" alt="Music note" style="width: 20px; height: 20px;">
@@ -114,6 +98,15 @@
                 <!-- Add more options as needed -->
               </select>
             </div>
+
+            <div class="presetBox">
+              <div class="selectedPresetContainer">
+                <img class="optionIcon" src="..\resources\images\speakerIcon.svg" alt="Music note" style="width: 20px; height: 20px;">
+              </div>
+
+              <input type="file" id="audioFileInput" accept="audio/*">
+              <audio id="audioPlayer" controls></audio>
+            </div>
           </div>
       </div>
 
@@ -125,14 +118,11 @@
           <output>50</output>
         </div>
 
-        <label for="audioFileInput">Audio file:</label>
-        <input type="file" id="audioFileInput" accept="audio/*">
-        <audio id="audioPlayer" controls></audio>
-
-        <!-- <a id="open-app-link">
+        
+        <a id="open-app-link">
           Connect
           <img src="..\resources\images\connectIcon.svg" alt="Wifi" style="width: 35px; height: 35px;"/>
-        </a> -->
+        </a>
 
         </div>
 
