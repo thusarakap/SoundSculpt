@@ -76,7 +76,9 @@ function adjustAudioPreset(calibratedProfile, currentPreset,isButtonOn) {
 
     if(isButtonOn){
 
-        let adjustedPresets = [];
+        if(!calibratedProfile || !currentPreset){
+            return null; //no presets
+        }
     
         if (calibratedProfile.length !== currentPreset.length) {
             throw new Error ("calibrated profile and current preset must have same length");
@@ -98,9 +100,10 @@ let Treble = [6, -4, 7, 0, 0, 12, 3];
 
 // Test
 
+
 let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
-let currentPreset = Flat;//CurrentPreset type
-let isButton = true;
+let currentPreset = Treble;//CurrentPreset type
+let isButton = false; //button state
 
 
 let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset,isButton);
