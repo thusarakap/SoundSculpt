@@ -1,6 +1,34 @@
-<button id="playAudioButton">Play Audio</button>
-<canvas id="waveformCanvas"></canvas>
+<!-- calibration.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/styles/styles.css">
+    <title>Home</title>
+</head>
+<body class="mainPagesBody">
+    <!--Nav Bar -->
+    <nav class="navbar">
+        <ul>
+        <li><a href="..\pages\home.html"><img src="../resources/images/homeIcon.svg" alt="Home"></a></li>
+        <li><a href="..\pages\account.html"><img src="../resources/images/accountIcon.svg" alt="Account"></a></li>
+        <li><a href="..\pages\home.html" id="settingsIcon"><img src="../resources/images/settingsIcon.svg" alt="Settings"></a></li>
+        </ul>
+    </nav>
 
-<p id="currentFrequency">Frequency: </p>
+    <div id="calibratorContainer">
+        <h1>Speaker calibrator</h1>
+        <canvas id="waveformCanvas"></canvas>
+        <audio id="myAudio" src="../resources/audio/Tones.mp3" style="display: none;"></audio>
+        <p id="currentFrequency">Current Frequency: <span id="frequencyValue">0Hz</span></p>
+        <button id="startCalibration">Start calibration</button>
+        <button id="cancelCalibration">Cancel</button>
+    </div>
 
-<script src="../resources/scripts/calibrater.js"></script>
+<script src="../resources/scripts/calibrator.js"></script>
+
+</body>
+</html>
+
+        
