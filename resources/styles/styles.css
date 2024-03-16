@@ -635,6 +635,7 @@ body.mainPagesBody {
   gap: 10px;
   text-decoration: none;
 }
+
 .volumeConnectContainer a:hover {
   background-color: #7544c4;
   transition: 0.3s ease;
@@ -780,4 +781,62 @@ label[for="audioFileInput"] {
   border-radius: 0 0 30px 0;
 }
 
+#calibratorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
 
+#calibratorContainer h1 {
+  font-family: 'Poppins', sans-serif;
+  color: #6366AE;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#calibratorContainer canvas {
+  border: #8a8a8a59 solid 5px;
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.15);  
+  border-radius: 30px;
+}
+
+#currentFrequency {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #6e6e6e;
+  margin-top: 20px;
+}
+
+#startCalibration {
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-size: 16px;
+  width: 240px;
+  padding: 6px 40px;
+  background: linear-gradient(to left, #9866AB, #6366AE);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+#startCalibration:hover {
+  background: linear-gradient(to left, #6366AE, #6366AE);
+}
+
+#cancelCalibration {
+  margin-top: 4px;
+  font-family: 'Poppins', sans-serif;
+  background: none;
+  border: none;
+  color: gray;
+  font-size: 16px;
+  cursor: pointer;
+}
