@@ -102,13 +102,6 @@ gainControls.forEach((control, i) => {
   });
 });
 
-let calibratedPresets = false;
-
-document.getElementById('toggleCalibratedPresets').addEventListener('click', function() {
-    calibratedPresets = !calibratedPresets;
-    console.log('Calibrated Presets:', calibratedPresets);
-});
-
 // String formatter
 if (!String.prototype.format) {
   String.prototype.format = function() {
@@ -221,6 +214,9 @@ let app = (() => {
       // Update state
       ranges[rangeIndex] = value;
 
+       // Save ranges to local storage
+       localStorage.setItem('equalizerSettings', JSON.stringify(ranges));
+
       let parent = $element.parentElement,
         $thumb = parent.querySelector('.range-slider__thumb'),
         $bar = parent.querySelector('.range-slider__bar'),
@@ -284,7 +280,9 @@ let app = (() => {
 
   }
 
-  function selectPreset(selectElement) {
+  let calibratedProfile = [2, -1, 0, 3, -2, 1, -1];
+
+function selectPreset(selectElement) {
     // Get the selected preset
     const type = selectElement.value;
 
@@ -298,7 +296,16 @@ let app = (() => {
     };
 
     // Get the values for the selected preset
-    const values = presets[type];
+    let values = presets[type];
+
+    // Check if the "Calibrated Presets" checkbox is checked
+    const isCalibrated = document.getElementById('toggleCalibratedPresets').checked;
+    if (isCalibrated) {
+        // Add the calibration profile to the preset values
+        values = values.map((value, index) => value + calibratedProfile[index]);
+
+        console.log("Preset", values);
+    }
 
     // Set the input values to the preset values
     const inputs = app.inputs;
@@ -321,7 +328,6 @@ let app = (() => {
     reset,
     selectPreset,
   };
-
 })();
 
 (function initAndSetupTheSliders() {
