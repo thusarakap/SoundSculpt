@@ -52,67 +52,18 @@ const rawData = fs.readFileSync(filePath);
 const data = JSON.parse(rawData);
 
 // Test1
-let inputDBValues1 = data.dBValues;
-let speakerType1 = data.speakerType;
+let inputDBValues = data.dBValues;
+let inputSpeakerType = data.speakerType;
 
-let outputDBValues1 = negateDBValues(inputDBValues1, speakerType1);
+let calibratedProfile = negateDBValues(inputDBValues, inputSpeakerType);
 console.log("test1:");
-printResults(outputDBValues1);
+printResults(calibratedProfile);
 
 // Print
 function printResults(output){
+    let resultArray = [];
     for (let key in output) {
-        console.log(`${key}: ${output[key]}`);
+        resultArray.push(output[key]);
     }
+    console.log(`calibratedProfile = [${resultArray.join(', ')}];`);
 }
-
-// Preset adjustment function
-
-
-function adjustAudioPreset(calibratedProfile, currentPreset,isButtonOn) {
-    if(typeof isButtonOn !== 'boolean'){
-        throw new Error("isButton must be a boolean");
-    }
-
-    if(isButtonOn){
-
-        if(!calibratedProfile || !currentPreset){
-            return null; //no presets
-        }
-    
-        if (calibratedProfile.length !== currentPreset.length) {
-            throw new Error ("calibrated profile and current preset must have same length");
-        }
-
-        return currentPreset.map((value,index) => value + calibratedProfile[index]);
-    }else{
-        return null;
-    }
-}
-
-
-
-//Current presets
-let Bass = [10, 10, 0, 0, 0, 0, -2];
-let Flat = [9, 10, 0, 0, 2, 0,-3];
-let Treble = [6, -4, 7, 0, 0, 12, 3];
-
-
-// Test
-
-
-let calibratedProfile = [2, -1, 0, 3, -2, 1, -1]; // Example calibrated profile
-let currentPreset = Treble;//CurrentPreset type
-let isButton = false; //button state
-
-
-let adjustedPresets = adjustAudioPreset(calibratedProfile, currentPreset,isButton);
-console.log("Adjusted Preset:");
-console.log(currentPreset=== Bass? "Bass":
-            currentPreset=== Flat? "Flat":
-            currentPreset=== Treble? "Treble":":");
-console.log(adjustedPresets);// Example output for the preset
-
-
-
-
