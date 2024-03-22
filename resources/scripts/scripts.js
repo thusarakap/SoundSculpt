@@ -280,7 +280,7 @@ let app = (() => {
 
   }
 
-  let calibratedProfile = [2, -1, 0, 3, -2, 1, -1];
+let calibratedProfile = require('../resources/scripts/algorithm.js');
 
 function selectPreset(selectElement) {
     // Get the selected preset
@@ -302,10 +302,22 @@ function selectPreset(selectElement) {
     const isCalibrated = document.getElementById('toggleCalibratedPresets').checked;
     if (isCalibrated) {
         // Add the calibration profile to the preset values
-        values = values.map((value, index) => value + calibratedProfile[index]);
+        values = values.map((value, index) => {
+            // Convert the calibrated profile value from the range of 0 to 15 to the range of 0 to 100
+            const calibratedValue = Math.round(Math.abs(calibratedProfile[index]) * (100 / 30));
+            console.log(`Calibrated Value for index ${index}:`, calibratedValue);
 
-        console.log("Preset", values);
-    }
+
+            // Add or subtract the calibrated value from the preset value according to its sign
+            const newValue = calibratedProfile[index] < 0 ? value - calibratedValue : value + calibratedValue;
+            console.log(`New Value for index ${index}:`, newValue);
+
+            return newValue;
+          });
+
+    console.log("Preset", values);
+}
+
 
     // Set the input values to the preset values
     const inputs = app.inputs;
@@ -316,7 +328,7 @@ function selectPreset(selectElement) {
 
     // Update the gain value of each filter
     filters.forEach((filter, index) => {
-        // Map the range of 0 to 100 to the range of -40 to 40
+        // Map the range of 0 to 100 to the range of -15 to 15
         const gainValue = (values[index] / 100) * 30 - 15;
         filter.gain.value = gainValue;
     });
@@ -356,3 +368,39 @@ inputs.forEach((range) => {
   });
 });
 
+module.exports = {
+  updateSliders: function(values) {
+    filters.forEach((filter, index) => {
+      // Map the range of 0 to 100 to the range of -40 to 40
+      const gainValue = (values[index] / 100) * 30 - 15;
+      filter.gain.value = gainValue;
+    });
+  },
+  getSliderValues: function() {
+    return app.inputs.map(input => input.value);
+  }
+};
+
+// Select the player button
+const playerButton = document.getElementById('playButton'); // Replace 'playerButton' with the actual ID of your player button
+
+// Add a 'click' event listener to the player button
+playerButton.addEventListener('click', function() {
+    // Create an object to store the gain control values
+    const gainValues = {};
+
+    // Iterate over the gain controls
+    for (let i = 0; i < gainControls.length; i++) {
+        // Get the current value of the control
+        const value = gainControls[i].value;
+
+        // Store the value in the object
+        gainValues[gainControls[i].id] = value;
+    }
+
+    // Convert the object to a JSON string
+    const gainValuesJSON = JSON.stringify(gainValues);
+
+    // Store the JSON string in localStorage
+    localStorage.setItem('gainValues', gainValuesJSON);
+});
