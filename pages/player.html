@@ -1,0 +1,39 @@
+<!-- player.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/styles/styles.css">
+    <title>Player</title>
+</head>
+
+<body class="mainPagesBody">
+    <!--Nav Bar -->
+    <nav class="navbar">
+        <ul>
+        <li><a href="..\pages\home.html"><img src="../resources/images/homeIcon.svg" alt="Home"></a></li>
+        <li><a href="..\pages\account.html"><img src="../resources/images/accountIcon.svg" alt="Account"></a></li>
+        <li><a href="..\pages\home.html" id="settingsIcon"><img src="../resources/images/settingsIcon.svg" alt="Settings"></a></li>
+        </ul>
+    </nav>
+
+    <div class="homePageContainer">
+        
+        <h1>Player</h1>
+
+        <!-- Main Content -->   
+        <div class="mainContent">
+            <input type="file" id="audioFilesInput" accept="audio/*" multiple>
+            <ul id="playlist"></ul>
+            <audio id="audioPlayer" controls></audio>
+        </div>
+
+    </div>
+
+<script src="../resources/scripts/playlist.js"></script>
+
+</body>
+</html>
+
+        
