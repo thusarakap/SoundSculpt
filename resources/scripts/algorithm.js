@@ -1,6 +1,6 @@
-function negateDBValues(dBValues, speakerType) {
-    let negatedValues = {};
-    for (let i = 0; i < dBValues.length; i++) {
+function negateDBValues(dBValues, speakerType){
+    let negatedValues = [];
+    for (let i = 0; i < dBValues.length; i++){
         let negatedValue = -dBValues[i];
         if (speakerType === "laptop") {
             if (i === 0 || i === 1) {
@@ -39,11 +39,11 @@ function negateDBValues(dBValues, speakerType) {
                 negatedValue = Math.min(negatedValue, 5); // cap frequency 1 and 2 at 5dB
             }
         }
-        negatedValues[`frequency${i + 1}`] = negatedValue;
+        negatedValues.push(negatedValue);
     }
     return negatedValues;
 }
-
+   
 const fs = require('fs');
 const path = require('path');
 
@@ -61,9 +61,7 @@ printResults(calibratedProfile);
 
 // Print
 function printResults(output){
-    let resultArray = [];
-    for (let key in output) {
-        resultArray.push(output[key]);
-    }
-    console.log(`calibratedProfile = [${resultArray.join(', ')}];`);
+    console.log(`calibratedProfile = [${output}];`);
 }
+
+module.exports = calibratedProfile;
