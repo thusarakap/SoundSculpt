@@ -43,8 +43,9 @@ fileInput.addEventListener('change', function(event) {
 
     // Create a list item for each audio file and add it to the playlist
     audioFiles.forEach((file, index) => {
+        const fileNameWithoutExtension = file.name.split('.').slice(0, -1).join('.');
         const listItem = document.createElement('li');
-        listItem.textContent = file.name;
+        listItem.textContent = fileNameWithoutExtension;
         listItem.addEventListener('click', function() {
             playAudio(index);
         });
@@ -66,7 +67,13 @@ function playAudio(index) {
 
     // Load and play the audio player
     audioPlayer.load();
-    audioPlayer.play();
+
+    // Remove the 'currentlyPlaying' class from all items
+    const items = document.querySelectorAll('#playlist li');
+    items.forEach(item => item.classList.remove('currentlyPlaying'));
+
+    // Add the 'currentlyPlaying' class to the currently playing item
+    items[index].classList.add('currentlyPlaying');
 
     currentIndex = index; // Update the current index every time a new song is played
 }
@@ -80,6 +87,44 @@ audioPlayer.addEventListener('ended', function() {
         // If there is no next audio file, reset the audio player
         audioPlayer.src = '';
     }
+});
+
+document.getElementById('prevButton').addEventListener('click', function() {
+    if (currentIndex > 0) {
+        playAudio(currentIndex - 1);
+    }
+});
+
+document.getElementById('nextButton').addEventListener('click', function() {
+    if (currentIndex + 1 < audioFiles.length) {
+        playAudio(currentIndex + 1);
+    }
+});
+
+document.getElementById('playPauseButton').addEventListener('click', function() {
+    const playPauseIcon = document.getElementById('playPauseIcon');
+    if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseIcon.src = '../resources/images/pauseIcon.png'; // Change to pause icon when audio is played
+    } else {
+        audioPlayer.pause();
+        playPauseIcon.src = '../resources/images/playIcon.png'; // Change to play icon when audio is paused
+    }
+});
+
+// Update the progress bar when the audio is playing
+audioPlayer.addEventListener('timeupdate', function() {
+    const percentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+    document.getElementById('progress').style.width = percentage + '%';
+});
+
+// Update the progress bar and the current time of the audio when the progress bar is clicked
+document.getElementById('progressBar').addEventListener('click', function(e) {
+    const clickPosition = e.pageX - this.offsetLeft;
+    const totalWidth = this.offsetWidth;
+    const percentage = clickPosition / totalWidth;
+    audioPlayer.currentTime = percentage * audioPlayer.duration;
+    document.getElementById('progress').style.width = (percentage * 100) + '%';
 });
 
 // Load the equalizer settings from local storage when the page loads
