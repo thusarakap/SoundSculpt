@@ -10,10 +10,12 @@
 <body class="mainPagesBody">
     <!--Nav Bar -->
     <nav class="navbar">
-        <ul>
-        <li><a href="..\pages\home.html"><img src="../resources/images/homeIcon.svg" alt="Home"></a></li>
-        <li><a href="..\pages\account.html"><img src="../resources/images/accountIcon.svg" alt="Account"></a></li>
-        <li><a href="..\pages\home.html" id="settingsIcon"><img src="../resources/images/settingsIcon.svg" alt="Settings"></a></li>
+        <ul>       
+          <li><a id="homeLink" href="..\pages\home.html"><img src="../resources/images/homeIcon.svg" alt="Home"></a></li>
+          <li><a id="calibratorLink" href="..\pages\calibrator.html"><img src="../resources/images/calibratorIcon.png" alt="Calibrator"></a></li>
+          <li><a id="playerLink" href="..\pages\player.html"><img src="../resources/images/playIconWhite.png" alt="Player"></a></li>
+          <li><a id="accountLink" href="..\pages\account.html"><img src="../resources/images/accountIcon.svg" alt="Account"></a></li>
+          <li><a id="settingsLink" href="..\pages\home.html"><img src="../resources/images/settingsIcon.svg" alt="Settings"></a></li>
         </ul>
     </nav>
 
@@ -25,6 +27,12 @@
         <button id="startCalibration">Start calibration</button>
         <button id="cancelCalibration">Cancel</button>
     </div>
+
+<script>
+    window.onload = function() {
+        document.getElementById('calibratorLink').classList.add('current');
+        }
+</script>
 
 <script src="../resources/scripts/calibrator.js"></script>
 
