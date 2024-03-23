@@ -47,7 +47,7 @@ function negateDBValues(dBValues, speakerType){
 const fs = require('fs');
 const path = require('path');
 
-const filePath = path.join(__dirname,'..','data','data.json');
+const filePath = path.join(__dirname,'..','data','userData.json');
 const rawData = fs.readFileSync(filePath);
 const data = JSON.parse(rawData);
 
