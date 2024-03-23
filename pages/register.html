@@ -29,11 +29,34 @@
         <label for="confirmPassword">Confirm Password</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required>
       </div>
-      <div id="error" class="error"></div> <!-- New error message div -->
+      <div id="error" class="error"></div> 
+      
+      <p>OR</p>
+
+      <p class="socialAuthText">Sign in using</p>
+
+      <div class="socialAuth">
+        
+        <button type="button" class="socialButton" id="googleLogin">
+          <img src="../resources/images/googleSocialLogin.svg" alt="Google" />
+        </button>
+
+        <button type="button" class="socialButton" id="facebookLogin">
+          <img src="../resources/images/facebookSocialLogin.svg" alt="Facebook" />
+        </button>
+
+        <button type="button" class="socialButton" id="appleLogin">
+          <img src="../resources/images/appleSocialLogin.svg" alt="Apple" />
+        </button>
+      </div>
+
       <button type="submit" class="submitButton">Sign Up</button>
+
       <br>
+  
       <label class="sendToRegistration">Already have an account? <a href="login.html">Sign In</a></label>
     </form>
+
   </div>
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
