@@ -11,25 +11,46 @@
 <body class="mainPagesBody">
     <!--Nav Bar -->
     <nav class="navbar">
-        <ul>
-        <li><a href="..\pages\home.html"><img src="../resources/images/homeIcon.svg" alt="Home"></a></li>
-        <li><a href="..\pages\account.html"><img src="../resources/images/accountIcon.svg" alt="Account"></a></li>
-        <li><a href="..\pages\home.html" id="settingsIcon"><img src="../resources/images/settingsIcon.svg" alt="Settings"></a></li>
+        <ul>       
+          <li><a id="homeLink" href="..\pages\home.html"><img src="../resources/images/homeIcon.svg" alt="Home"></a></li>
+          <li><a id="calibratorLink" href="..\pages\calibrator.html"><img src="../resources/images/calibratorIcon.png" alt="Calibrator"></a></li>
+          <li><a id="playerLink" href="..\pages\player.html"><img src="../resources/images/playIconWhite.png" alt="Player"></a></li>
+          <li><a id="accountLink" href="..\pages\account.html"><img src="../resources/images/accountIcon.svg" alt="Account"></a></li>
+          <li><a id="settingsLink" href="..\pages\home.html"><img src="../resources/images/settingsIcon.svg" alt="Settings"></a></li>
         </ul>
     </nav>
 
-    <div class="homePageContainer">
+    <div class="playerPageContainer">
         
         <h1>Player</h1>
 
         <!-- Main Content -->   
-        <div class="mainContent">
-            <input type="file" id="audioFilesInput" accept="audio/*" multiple>
+        <div class="playlist">
+            <label for="audioFilesInput" id="audioFilesInputLabel">Choose music</label>
+            <input type="file" id="audioFilesInput" accept="audio/*" multiple style="display: none;">
             <ul id="playlist"></ul>
-            <audio id="audioPlayer" controls></audio>
+        </div>
+ 
+        <div id="customPlayer">
+            <div id="progressBar">
+                <div id="progress"></div>
+            </div>
+            <div id="playerControls">
+                <button id="prevButton"><img src="../resources/images/previousIcon.png" alt="Previous"></button>
+                <button id="playPauseButton"><img id="playPauseIcon" src="../resources/images/playIcon.png" alt="Play/Pause"></button>
+                <button id="nextButton"><img src="../resources/images/nextIcon.png" alt="Skip"></button>
+            </div>
         </div>
 
+        <audio id="audioPlayer" controls></audio>
+
     </div>
+
+<script>
+    window.onload = function() {
+        document.getElementById('playerLink').classList.add('current');
+        }
+</script>
 
 <script src="../resources/scripts/playlist.js"></script>
 
