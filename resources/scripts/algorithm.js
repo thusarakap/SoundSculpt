@@ -34,8 +34,8 @@ function negateDBValues(dBValues, speakerType){
             }else if(i === 5){
                 negatedValue = Math.min(negatedValue, 8); // cap frequency 6 at 8dB
             }
-        }else if (speakerType = "Bluetooth Speakers"){
-            if(i === 0 | i === 1){
+        }else if (speakerType === "Bluetooth Speakers"){
+            if(i === 0 || i === 1){
                 negatedValue = Math.min(negatedValue, 5); // cap frequency 1 and 2 at 5dB
             }
         }
@@ -64,4 +64,7 @@ function printResults(output){
     console.log(`calibratedProfile = [${output}];`);
 }
 
-module.exports = calibratedProfile;
+module.exports = {
+    calibratedProfile,
+    negateDBValues
+};
