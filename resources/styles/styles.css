@@ -434,25 +434,25 @@ body.mainPagesBody {
   text-align: center;
 }
 .component .sliders .range-slider:nth-child(2)::after {
-  content: "32Hz";
+  content: "80Hz";
 }
 .component .sliders .range-slider:nth-child(3)::after {
-  content: "64Hz";
+  content: "150Hz";
 }
 .component .sliders .range-slider:nth-child(4)::after {
-  content: "128Hz";
+  content: "220Hz";
 }
 .component .sliders .range-slider:nth-child(5)::after {
-  content: "256Hz";
+  content: "440Hz";
 }
 .component .sliders .range-slider:nth-child(6)::after {
-  content: "512Hz";
+  content: "1000Hz";
 }
 .component .sliders .range-slider:nth-child(7)::after {
-  content: "1kHz";
+  content: "3kHz";
 }
 .component .sliders .range-slider:nth-child(8)::after {
-  content: "2kHz";
+  content: "11kHz";
 }
 .component .sliders .range-slider__thumb {
   opacity: 1;
