@@ -2,21 +2,39 @@
   "name": "soundsculpt",
   "version": "1.0.0",
   "description": "PC software to calibrate speakers by utilising a smartphone.",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "test": "jest",
+    "package": "electron-builder --win --x64"
   },
   "icon": "resources/images/SoundSulptIcon.png",
   "keywords": [],
   "author": "CS31",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^28.1.4"
+    "electron": "^28.1.4",
+    "electron-builder": "^24.13.3",
+    "electron-packager": "^17.1.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   },
   "dependencies": {
     "@elemaudio/core": "^3.1.0",
     "@firebase/analytics": "^0.10.1",
     "d3": "^7.8.5",
-    "eslint": "^8.57.0"
+    "eslint": "^8.57.0",
+    "firebase": "^10.9.0",
+    "text-encoding": "^0.7.0"
+  },
+  "build": {
+    "appId": "com.CS31.soundsculpt",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
