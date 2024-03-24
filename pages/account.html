@@ -22,29 +22,52 @@
         </ul>
     </nav>
 
-  
-      <div class="accountContainer">
-        <div class="accountDetailsContainer">
-          <h1>Hello, George</h1>
-          <p>Audio Enthusiast</p>
-          <label for="">3 Connections | 5 Presets</label>
-    
-        </div>
-        
+    <div id="accountPage">
+    <div class="accountDetailsContainer">
+      <h1>Hello, <span id="username">Loading...</span></h1>
+      <p>Audio Enthusiast</p>
+      <label for="">3 Connections | 5 Presets</label>
+  </div>
+  <div id="accountPageSplash">
+    <img src="../resources/images/soundSculptLogo.png" alt="">
+  </div>
+</div>
        
         
     
       </div>
+
+      <!-- Firebase configuration and JavaScript -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+  <script src="../resources/scripts/firebase.js"></script>
         
-   
+      <script>
+        window.onload = function() {
+            document.getElementById('accountLink').classList.add('current');
+    
+            const db = firebase.database();
 
-<script>
-    window.onload = function() {
-        document.getElementById('accountLink').classList.add('current');
-        }
-</script>
-
-<script src="../resources/scripts/playlist.js"></script>
+            // Get 'userId' from the localStorage
+            const userId = localStorage.getItem('userId');
+            console.log('User ID:', userId);  // Log the user ID
+    
+            // Assuming 'db' is your Firebase database reference
+            db.ref('Users/' + userId + '/username').once('value').then(function(snapshot) {
+                if (snapshot.exists()) {
+                    let username = snapshot.val();
+    
+                    // Log the username
+                    console.log('Username:', username);
+    
+                    // Set the username
+                    document.getElementById('username').textContent = username;
+                }
+            });
+        };
+    </script>
 
 </body>
 </html>
