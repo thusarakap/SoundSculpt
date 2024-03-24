@@ -12,29 +12,29 @@ function negateDBValues(dBValues, speakerType){
             } else if (i === 6) {
                 negatedValue = Math.min(negatedValue, 8); // Cap frequency 7 at +8 dB
             }
-        } else if (speakerType === "portable speaker"){
+        } else if (speakerType === "portable"){
             if(i === 0){
                 negatedValue = Math.min(negatedValue, 4); // cap frequency 1 at 4dB
             } else if (i=== 1){
                 negatedValue = Math.min(negatedValue, 5); // cap frequency 2 at 5dB
             }
-        }else if (speakerType === "soundbars"){
+        }else if (speakerType === "soundbar"){
             if(i === 4 || i === 5 || i === 6){
                 negatedValue = Math.min(negatedValue, 6); // cap frequency 5,6 and 7 at 6dB
             }
-        }else if(speakerType === "Outdoor speakers"){
+        }else if(speakerType === "outdoor"){
             if(i === 5){
                 negatedValue = Math.min(negatedValue, 6); // cap frequency 6 at 6dB
             }else if(i === 6){
                 negatedValue = Math.min(negatedValue, 7); //cap frequency 7 at 7dB
             }
-        }else if (speakerType === "Gaming speakers"){
+        }else if (speakerType === "desktop"){
             if(i=== 4){
                 negatedValue = Math.min(negatedValue, 7); // cap frequency 5 at 7dB
             }else if(i === 5){
                 negatedValue = Math.min(negatedValue, 8); // cap frequency 6 at 8dB
             }
-        }else if (speakerType === "Bluetooth Speakers"){
+        }else if (speakerType === "floorstanding "){
             if(i === 0 || i === 1){
                 negatedValue = Math.min(negatedValue, 5); // cap frequency 1 and 2 at 5dB
             }
