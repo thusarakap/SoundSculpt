@@ -1,24 +1,52 @@
-<!-- account.html -->
+
+
+<!-- player.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../resources/styles/styles.css">
-  <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/styles/styles.css">
+    <title>Player</title>
 </head>
-<body class="loginRegPages">
-  <div class="accountContainer">
-    <div class="accountDetailsContainer">
-      <h1>Hello, George</h1>
-      <p>Audio Enthusiast</p>
-      <label for="">3 Connections | 5 Presets</label>
 
-    </div>
+<body class="mainPagesBody">
+    <!--Nav Bar -->
+    <nav class="navbar">
+        <ul>       
+          <li><a id="homeLink" href="..\pages\home.html"><img src="../resources/images/homeIcon.svg" alt="Home"></a></li>
+          <li><a id="calibratorLink" href="..\pages\calibrator.html"><img src="../resources/images/calibratorIcon.png" alt="Calibrator"></a></li>
+          <li><a id="playerLink" href="..\pages\player.html"><img src="../resources/images/playIconWhite.png" alt="Player"></a></li>
+          <li><a id="accountLink" href="..\pages\account.html"><img src="../resources/images/accountIcon.svg" alt="Account"></a></li>
+          <li><a id="settingsLink" href="..\pages\home.html"><img src="../resources/images/settingsIcon.svg" alt="Settings"></a></li>
+        </ul>
+    </nav>
+
+  
+      <div class="accountContainer">
+        <div class="accountDetailsContainer">
+          <h1>Hello, George</h1>
+          <p>Audio Enthusiast</p>
+          <label for="">3 Connections | 5 Presets</label>
     
+        </div>
+        
+       
+        
+    
+      </div>
+        
    
-    
 
-  </div>
+<script>
+    window.onload = function() {
+        document.getElementById('accountLink').classList.add('current');
+        }
+</script>
+
+<script src="../resources/scripts/playlist.js"></script>
+
 </body>
 </html>
+
+        
