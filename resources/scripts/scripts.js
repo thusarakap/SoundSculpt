@@ -32,13 +32,13 @@ const audioSource = audioContext.createMediaElementSource(audioPlayer);
 
 // Select the gain controls
 const gainControls = [
-    document.getElementById('gain60'),
+    document.getElementById('gain80'),
     document.getElementById('gain150'),
-    document.getElementById('gain400'),
+    document.getElementById('gain220'),
+    document.getElementById('gain440'),
     document.getElementById('gain1000'),
     document.getElementById('gain3000'),
-    document.getElementById('gain8000'),
-    document.getElementById('gain16000')
+    document.getElementById('gain11000')
 ];
 
 // Create seven BiquadFilterNode objects for the seven frequencies
@@ -53,7 +53,7 @@ const filters = [
 ];
 
 // Set the type and frequency of each filter
-const frequencies = [60, 150, 400, 1000, 3000, 8000, 16000];
+const frequencies = [80, 150, 220, 440, 1000, 3000, 11000];
 filters.forEach((filter, i) => {
     filter.type = 'peaking';
     filter.frequency.value = frequencies[i];
@@ -288,11 +288,14 @@ function selectPreset(selectElement) {
 
     // Define preset values
     const presets = {
-        calibrated: [70, 50, 40, 60, 50, 40, 50],
-        flat: [50, 50, 50, 50, 50, 50, 60],
+        flat: [50, 50, 50, 50, 50, 50, 50],
         bass: [100, 90, 70, 60, 50, 50, 50],
         trebel: [40, 50, 50, 60, 70, 80, 90],
-        game: [80, 70, 60, 40, 60, 70, 80]
+        game: [80, 70, 60, 40, 60, 70, 80],
+        vocalBoost: [60, 50, 50, 50, 60, 70, 60],
+        acousticEnhance: [50, 65, 80, 80, 65, 60, 50],
+        dynamicBalance: [50, 60, 60, 60, 60, 60, 50],
+        enhancedClarity: [40, 50, 60, 70, 70, 60, 40]
     };
 
     // Get the values for the selected preset
