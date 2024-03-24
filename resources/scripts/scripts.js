@@ -280,7 +280,7 @@ let app = (() => {
 
   }
 
-let calibratedProfile = require('../resources/scripts/algorithm.js');
+let { calibratedProfile } = require('../resources/scripts/algorithm.js');
 
 function selectPreset(selectElement) {
     // Get the selected preset
