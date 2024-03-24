@@ -136,6 +136,7 @@ body.loginRegPages {
 .loginContainer h2{
   color: #6365ae;
   font-size: 30px;
+
 }
 
 .loginRegForm {
@@ -259,6 +260,11 @@ body.loginRegPages {
   padding-left: 30px;
 }
 
+.registrationContainer h2{
+  color: #6365ae;
+  font-size: 30px;
+}
+
 .usernameEmailFormContainer{
   display: flex;
   flex-direction: row;
@@ -333,8 +339,7 @@ body.mainPagesBody {
   }
   
   .navbar a.current {
-    border: 2px solid #fff;
-    padding: 8px;
+    background: rgba(141, 141, 141, 0.473); 
     border-radius: 5px;
   }
   
@@ -344,8 +349,8 @@ body.mainPagesBody {
     transition: 0.3s ease;
   }
 
-  #settingsIcon {
-    margin-top: 450px;
+  #settingsLink {
+    margin-top: 340px;
   }  
 }
 
@@ -692,7 +697,7 @@ label[for="audioFileInput"] {
 }
 
 /* Style for the audio player */
-#audioPlayer {
+#demoAudioPlayer {
   margin-left: 15px;
   margin-top: 10px;
   width: 90%;
@@ -839,4 +844,101 @@ label[for="audioFileInput"] {
   color: gray;
   font-size: 16px;
   cursor: pointer;
+}
+
+
+/* Player page */
+
+.playerPageContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 47.5px;
+}
+
+.playerPageContainer h1 {
+  font-size: 40px;
+  margin-bottom: -10px;
+  text-align: center;
+  margin-top: -10px;
+  color: #6366AE;
+}
+
+#playlist {
+  border-radius: 15px;
+  border: #3b3b3b59 solid 3px;
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.15);  
+  width: 800px; 
+  height: 300px; 
+  overflow-y: auto; 
+  padding: 10px; 
+  background-color: #e0d6ec;
+  list-style-type: none; 
+}
+
+#audioFilesInputLabel {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #9866AB, #6366AE);
+  color: white;
+  cursor: pointer;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#playlist li {
+  background-color: #f1f1f1; /* Dark background */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: #a0a0a059 solid 1px;
+  box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.15);  
+}
+
+#playlist li.currentlyPlaying {
+  background: linear-gradient(to left, #a786b4, #8284bd);
+}
+
+#customPlayer {
+  background-color: #D9D9D9; /* Dark background */
+  padding: 10px;
+  color: white;
+  border-radius: 15px;
+  border: #3b3b3b59 solid 2px;
+}
+
+#progressBar {
+  margin-top: 5px;
+  border-radius: 15px;
+  background-color: #888888; /* Darker background */
+  width: 100%;
+  height: 20px;
+}
+
+#progress {
+  background: linear-gradient(to left, #a786b4, #8284bd);
+  height: 20px;
+  width: 0;
+  border-radius: 15px;
+}
+
+#audioPlayer {
+  display: none;
+}
+
+#playerControls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+#customPlayer button {
+  padding: 0 10px 0 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#customPlayer button img {
+  width: 30px;
+  height: 30px;
 }
