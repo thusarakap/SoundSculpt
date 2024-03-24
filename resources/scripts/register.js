@@ -1,3 +1,11 @@
+function addFormSubmissionListener() {
+  const form = document.getElementById("signupForm");
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
 document.getElementById("signupForm").addEventListener("submit", (event) => {
   event.preventDefault();
   const email = document.getElementById("email").value;
@@ -34,3 +42,15 @@ document.getElementById("signupForm").addEventListener("submit", (event) => {
     errorElement.innerHTML = error.message;
   });
 });
+
+});
+}
+}
+
+
+// Call the function to add the event listener
+if (typeof window !== 'undefined') {
+  addFormSubmissionListener();
+}
+
+module.exports = { addFormSubmissionListener };
