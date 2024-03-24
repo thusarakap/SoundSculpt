@@ -766,25 +766,7 @@ label[for="audioFileInput"] {
   color: #6366AE;
 }
 
-/* Account Page */
-.accountContainer {
-  position: relative;
-  width: 70%;
-  height: 100vh;
-  background-color: #fff;
-  border-radius: 0 0 30px 0;
-  display: flex;
-  flex-direction: column; 
-
-}
-
-.accountDetailsContainer {
-  width: 100%;
-  height: 250px;
-  color: #FFF;
-  background-image: linear-gradient(to left, #6366AE, #9866AB);
-  border-radius: 0 0 30px 0;
-}
+/* Calibrator page */
 
 #calibratorContainer {
   display: flex;
@@ -813,15 +795,15 @@ label[for="audioFileInput"] {
   font-size: 20px;
   font-weight: 600;
   color: #6e6e6e;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #startCalibration {
-  margin-top: 10px;
+  margin-top: -10px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   font-size: 16px;
-  width: 240px;
+  width: 250px;
   padding: 6px 40px;
   background: linear-gradient(to left, #9866AB, #6366AE);
   color: #fff;
@@ -835,6 +817,27 @@ label[for="audioFileInput"] {
 #startCalibration:hover {
   background: linear-gradient(to left, #6366AE, #6366AE);
 }
+
+#getCalibratedProfile {
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-size: 16px;
+  width: 250px;
+  padding: 6px 40px;
+  background-color: #8f8f8f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+#getCalibratedProfile:hover {
+  background-color: #2e7e3f;
+}
+
 
 #cancelCalibration {
   margin-top: 4px;
@@ -941,4 +944,84 @@ label[for="audioFileInput"] {
 #customPlayer button img {
   width: 30px;
   height: 30px;
+}
+
+/* Account Page */
+
+#accountPage {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.accountDetailsContainer {
+  display: flex;
+  flex-direction: row;
+  padding-top: 40px;
+  width: 638px;
+  height: 250px;
+  color: #FFF;
+  background-image: linear-gradient(to left, #6366AE, #9866AB);
+  border-radius: 0 0 30px 0;
+}
+
+.accountDetails {
+  margin-left: -20px;
+  margin-top: -25px;
+}
+.accountDetails h1 {
+  font-size: 40px;
+}
+
+
+.accountDetails h2 {
+  margin-top: -20px;
+  margin-bottom: 60px;
+}
+
+#subscriptionOptions {
+  margin-top: 20px;
+  padding-left: 40px;
+}
+
+#subscriptionName {
+  font-style: italic;
+  color: #6F6D6D;
+}
+
+.subscriptionOptionBox {
+  background-color: #EEE;
+  width: 550px;
+  border-radius: 15px;
+  padding-bottom: 1px;
+  margin-top: -10px;
+}
+
+.subscriptionOptionBox h4 {
+  font-style: italic;
+  padding-top: 10px;
+  padding-left: 15px;
+  color: #444444;
+  margin-bottom: 10px;
+}
+
+.subscriptionOptionBox p {
+  padding-left: 15px;
+  font-size: 12px;
+  margin-top: -5px;
+  color: #444444;
+}
+
+#accountPageSplash {
+  background-image: linear-gradient(to right, #6366AE, #9866AB);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#accountPageSplash img {
+  padding: 40px;
+  width: 200px;
+  height: auto;
 }
