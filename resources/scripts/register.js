@@ -14,7 +14,7 @@ document.getElementById("signupForm").addEventListener("submit", (event) => {
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(() => {
-      location.replace("home.html");
+      location.replace("login.html");
     })
     .catch((error) => {
       errorElement.innerHTML = error.message;
