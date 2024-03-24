@@ -11,14 +11,12 @@ function createWindow() {
     icon: path.join(__dirname, 'resources/images/SoundSculptIcon.png'),
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
     },
   });
 
   // Load the start screen
   mainWindow.loadFile('pages/index.html');
-
-  // Dev tools
-  mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function () {
     mainWindow = null;
@@ -34,3 +32,4 @@ app.on('window-all-closed', function () {
 app.on('activate', function () {
   if (mainWindow === null) createWindow();
 });
+
