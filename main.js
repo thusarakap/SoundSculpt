@@ -8,6 +8,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 700,
+    resizable: false,
     icon: path.join(__dirname, 'resources/images/SoundSculptIcon.png'),
     webPreferences: {
       nodeIntegration: true,
