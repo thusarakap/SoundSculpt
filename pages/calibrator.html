@@ -25,6 +25,7 @@
         <audio id="myAudio" src="../resources/audio/Tones.mp3" style="display: none;"></audio>
         <p id="currentFrequency">Current Frequency: <span id="frequencyValue">0Hz</span></p>
         <button id="startCalibration">Start calibration</button>
+        <button id="getCalibratedProfile">Get calibrated profile</button>
         <button id="cancelCalibration">Cancel</button>
     </div>
 
@@ -33,6 +34,13 @@
         document.getElementById('calibratorLink').classList.add('current');
         }
 </script>
+
+<!-- Firebase configuration and JavaScript -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+<script src="../resources/scripts/firebase.js"></script>
 
 <script src="../resources/scripts/calibrator.js"></script>
 
