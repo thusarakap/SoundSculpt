@@ -14,6 +14,9 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
     const userId = userCredential.user.uid;
     console.log('User ID:', userId);
 
+    // Store 'userId' in the localStorage
+    localStorage.setItem('userId', userId);
+
     // Get user data from Realtime Database
     const db = firebase.database();
     db.ref('users/' + userId).once('value').then((snapshot) => {
