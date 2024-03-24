@@ -1,6 +1,6 @@
 // Select the file input and audio player
 const fileInput = document.getElementById('audioFileInput');
-const audioPlayer = document.getElementById('audioPlayer');
+const audioPlayer = document.getElementById('demoAudioPlayer');
 const audioFileInputLabel = document.querySelector('label[for="audioFileInput"]'); // Select the label
 
 // Add an 'change' event listener to the file input element
