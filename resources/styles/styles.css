@@ -559,9 +559,16 @@ body.mainPagesBody {
   margin-right: 10px;
 }
 
+#setCalibratedPreset {
+  font-size: 14px;
+  margin-left: 25px;
+  margin-top: 6px;
+  margin-bottom: -5px;
+}
+
 #arrowIcon {
   margin-top: 5px;
-  margin-left: 120px;
+  margin-left: 10px;
 }
 
 #selectedPreset {
