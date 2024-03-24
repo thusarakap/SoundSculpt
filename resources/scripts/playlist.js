@@ -68,6 +68,9 @@ function playAudio(index) {
     // Load and play the audio player
     audioPlayer.load();
 
+    // Play the audio
+    audioPlayer.play();
+
     // Remove the 'currentlyPlaying' class from all items
     const items = document.querySelectorAll('#playlist li');
     items.forEach(item => item.classList.remove('currentlyPlaying'));
