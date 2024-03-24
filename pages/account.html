@@ -23,19 +23,47 @@
     </nav>
 
     <div id="accountPage">
-    <div class="accountDetailsContainer">
-      <h1>Hello, <span id="username">Loading...</span></h1>
-      <p>Audio Enthusiast</p>
-      <label for="">3 Connections | 5 Presets</label>
-  </div>
-  <div id="accountPageSplash">
-    <img src="../resources/images/soundSculptLogo.png" alt="">
-  </div>
-</div>
-       
-        
-    
+    <div>
+      <div class="accountDetailsContainer">
+        <div class="accountAvatar">
+          <img src="../resources/images/avatarIcon.svg" alt="">
+        </div>
+
+        <div class="accountDetails">
+          <h1>Hello, <span id="username">Loading...</span></h1>
+          <h2>Audio Enthusiast</h2>
+          <label for="audioDevices">3 Connections | 5 Presets</label>
+        </div>
       </div>
+
+      <div id="subscriptionOptions">
+        <h4>Subscription | <span id="subscriptionName">LITE</span></h4>
+
+        <div class="subscriptionOptionBox">
+          <h4>LITE</h4>
+          <p>5 Device connections</p>
+          <p>8 Presets</p>
+        </div>
+
+        <div class="subscriptionOptionBox">
+          <h4>Supporter</h4>
+          <p>Unlimited Device connections</p>
+          <p>30 Presets + Community Presets</p>
+          <p>30 Presets + Community Presets</p>
+          <p>Custom Presets</p>
+          <p>No Ads</p>
+        </div>
+
+      </div>
+
+    </div>
+
+      <div id="accountPageSplash">
+        <img src="../resources/images/soundSculptLogo.png" alt="">
+      </div>
+
+    </div>
+  
 
       <!-- Firebase configuration and JavaScript -->
   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
