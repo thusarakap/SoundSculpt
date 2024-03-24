@@ -42,10 +42,20 @@ audio.addEventListener('timeupdate', function() {
 
     // Determine the message to display based on the elapsed time
     let message;
-    if (elapsedTime >= 0 && elapsedTime <= 8) {
-        message = '60Hz';
-    } else if (elapsedTime >= 12 && elapsedTime <= 18) {
+    if (elapsedTime >= 0 && elapsedTime <= 10) {
+        message = '80Hz';
+    } else if (elapsedTime >= 11 && elapsedTime <= 20) {
         message = '150Hz';
+    } else if (elapsedTime >= 21 && elapsedTime <= 30) {
+        message = '220Hz';
+    } else if (elapsedTime >= 31 && elapsedTime <= 40) {
+        message = '440Hz';
+    } else if (elapsedTime >= 41 && elapsedTime <= 50) {
+        message = '1000Hz';
+    } else if (elapsedTime >= 51 && elapsedTime <= 60) {
+        message = '3000Hz';
+    } else if (elapsedTime >= 61 && elapsedTime <= 70) {
+        message = '11000Hz';
     } else {
         message = '';
     }
