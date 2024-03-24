@@ -3,6 +3,7 @@ document.getElementById("signupForm").addEventListener("submit", (event) => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
+  const username = document.getElementById("username").value;
   const errorElement = document.getElementById("error");
 
   if (password !== confirmPassword) {
@@ -13,10 +14,23 @@ document.getElementById("signupForm").addEventListener("submit", (event) => {
   }
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // The user ID is userCredential.user.uid
+    const userId = userCredential.user.uid;
+
+    // Save the username to the Firebase database
+    firebase.database().ref('Users/' + userId).set({
+      username: username
+    })
     .then(() => {
-      location.replace("login.html");
+      console.log('Username saved:', username);  // Log when the username is saved
+      location.replace("login.html");  // Move this inside the .then() block
     })
     .catch((error) => {
-      errorElement.innerHTML = error.message;
+      console.error('Error saving username:', error);  // Log if any errors occur
     });
+  })
+  .catch((error) => {
+    errorElement.innerHTML = error.message;
+  });
 });
