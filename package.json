@@ -27,13 +27,18 @@
     "text-encoding": "^0.7.0"
   },
   "build": {
-    "appId": "com.CS31.soundsculpt",
+    "appId": "com.CS31.SoundSculpt",
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "resources/images/soundSculptIcon.ico"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     }
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/thusarakap",
+    "access": "public"
   }
 }
