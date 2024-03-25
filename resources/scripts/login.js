@@ -55,9 +55,16 @@ document.getElementById("loginForm").addEventListener("submit", (event) => {
     });
   })
   .catch((error) => {
-    const errorMessage = error.message;
+    // Remove the previous error message if it exists
+    const previousErrorMessage = document.querySelector('.error-message');
+    if (previousErrorMessage) {
+        previousErrorMessage.remove();
+    }
+
+    // Insert the new error message
+    const errorMessage = "Invalid credentials.";
     passwordField.insertAdjacentHTML('afterend', `<p class="error-message" style="margin-left: 1px;">${errorMessage}</p>`);
-  });
+});
 });
 
 function forgotPass() {
