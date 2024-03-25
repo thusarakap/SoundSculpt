@@ -566,6 +566,10 @@ body.mainPagesBody {
   margin-bottom: -5px;
 }
 
+#toggleCalibratedPresets {
+  margin-top: 5px;
+}
+
 #arrowIcon {
   margin-top: 5px;
   margin-left: 10px;
