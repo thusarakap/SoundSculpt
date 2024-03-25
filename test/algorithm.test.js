@@ -17,35 +17,35 @@ describe('negateDBValues', () => {
     
     test('negates dB values and applies caps for portable speaker type', () => {
         const dBValues = [-10, -10, 10, 10, 10, 10, 10];
-        const speakerType = 'portable speaker';
+        const speakerType = 'portable';
         const result = negateDBValues(dBValues, speakerType);
         expect(result).toEqual([4, 5, -10, -10, -10, -10, -10]);
       });
     
       test('negates dB values and applies caps for soundbars speaker type', () => {
         const dBValues = [10, 10, 10, -10, -10, -10, -10];
-        const speakerType = 'soundbars';
+        const speakerType = 'soundbar';
         const result = negateDBValues(dBValues, speakerType);
         expect(result).toEqual([-10, -10, -10, 10, 6, 6, 6]);
       });
     
       test('negates dB values and applies caps for Outdoor speakers type', () => {
         const dBValues = [10, 10, 10, 10, 10, -10, -10];
-        const speakerType = 'Outdoor speakers';
+        const speakerType = 'outdoor';
         const result = negateDBValues(dBValues, speakerType);
         expect(result).toEqual([-10, -10, -10, -10, -10, 6, 7]);
       });
     
       test('negates dB values and applies caps for Gaming speakers type', () => {
         const dBValues = [10, 10, 10, 10, -10, -10, 10];
-        const speakerType = 'Gaming speakers';
+        const speakerType = 'desktop';
         const result = negateDBValues(dBValues, speakerType);
         expect(result).toEqual([-10, -10, -10, -10, 7, 8, -10]);
       });
     
       test('negates dB values and applies caps for Bluetooth Speakers type', () => {
         const dBValues = [-10, -10, 10, 10, 10, 10, 10];
-        const speakerType = 'Bluetooth Speakers';
+        const speakerType = 'floorstanding';
         const result = negateDBValues(dBValues, speakerType);
         expect(result).toEqual([5, 5, -10, -10, -10, -10, -10]);
       });
