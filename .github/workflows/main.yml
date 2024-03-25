@@ -18,12 +18,6 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Clear npm cache
-      run: npm cache clean --force
-
-    - name: Authenticate with GitHub
-      run: echo "${{ secrets.GH_TOKEN }}" | npm login --registry=https://npm.pkg.github.com --scope=@thusarakap --stdin
-
     - name: Install Dependencies
       run: npm install
 
@@ -32,6 +26,3 @@ jobs:
 
     - name: Build
       run: npm run build
-
-    - name: Publish
-      run: npm publish
