@@ -34,7 +34,7 @@ function negateDBValues(dBValues, speakerType){
             }else if(i === 5){
                 negatedValue = Math.min(negatedValue, 8); // cap frequency 6 at 8dB
             }
-        }else if (speakerType === "floorstanding "){
+        }else if (speakerType === "floorstanding"){
             if(i === 0 || i === 1){
                 negatedValue = Math.min(negatedValue, 5); // cap frequency 1 and 2 at 5dB
             }
