@@ -36,9 +36,5 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
     }
-  },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com/thusarakap",
-    "access": "public"
   }
 }
