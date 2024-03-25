@@ -20,8 +20,6 @@
     "jest-environment-jsdom": "^29.7.0"
   },
   "dependencies": {
-    "d3": "^7.8.5",
-    "eslint": "^8.57.0",
     "firebase": "^10.9.0",
     "text-encoding": "^0.7.0"
   },
