@@ -1,5 +1,5 @@
 # SoundSculpt
-PC software to calibrate speakers by utilising an algorithm to calibrate and smartphone to record and send frequency response data.
+A desktop application which calibrates speakers by utilising a partner mobile application connected through a database to calculate speaker frequency response with functionality for playing music accessing locally stored audio files and real-time audio equalisation. (JavaScript, Electron, Node.js, HTML, CSS, Firebase)
 
 Helper Mobile App:
 https://github.com/HashSuranjana/Sound-Sculpt-Mobile-2
